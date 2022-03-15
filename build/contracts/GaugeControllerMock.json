@@ -1,0 +1,2398 @@
+{
+  "abi": [
+    {
+      "gas": 2462,
+      "inputs": [
+        {
+          "name": "_gauge",
+          "type": "address"
+        }
+      ],
+      "name": "gauge_types",
+      "outputs": [
+        {
+          "name": "",
+          "type": "int128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 35737,
+      "inputs": [
+        {
+          "name": "_gauge",
+          "type": "address"
+        },
+        {
+          "name": "_type",
+          "type": "int128"
+        }
+      ],
+      "name": "_set_gauge_type",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts/testing/GaugeControllerMock.vy"
+  },
+  "ast": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "annotation": {
+          "ast_type": "Subscript",
+          "col_offset": 14,
+          "end_col_offset": 38,
+          "end_lineno": 3,
+          "lineno": 3,
+          "node_id": 4,
+          "slice": {
+            "ast_type": "Index",
+            "col_offset": 22,
+            "end_col_offset": 37,
+            "end_lineno": 3,
+            "lineno": 3,
+            "node_id": 7,
+            "src": "40:15:0",
+            "value": {
+              "ast_type": "Tuple",
+              "col_offset": 22,
+              "elements": [
+                {
+                  "ast_type": "Name",
+                  "col_offset": 22,
+                  "end_col_offset": 29,
+                  "end_lineno": 3,
+                  "id": "address",
+                  "lineno": 3,
+                  "node_id": 9,
+                  "src": "40:7:0"
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 31,
+                  "end_col_offset": 37,
+                  "end_lineno": 3,
+                  "id": "int128",
+                  "lineno": 3,
+                  "node_id": 11,
+                  "src": "49:6:0"
+                }
+              ],
+              "end_col_offset": 37,
+              "end_lineno": 3,
+              "lineno": 3,
+              "node_id": 8,
+              "src": "40:15:0"
+            }
+          },
+          "src": "32:24:0",
+          "value": {
+            "ast_type": "Name",
+            "col_offset": 14,
+            "end_col_offset": 21,
+            "end_lineno": 3,
+            "id": "HashMap",
+            "lineno": 3,
+            "node_id": 5,
+            "src": "32:7:0"
+          }
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 38,
+        "end_lineno": 3,
+        "lineno": 3,
+        "node_id": 1,
+        "simple": 1,
+        "src": "18:38:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 12,
+          "end_lineno": 3,
+          "id": "gauge_types_",
+          "lineno": 3,
+          "node_id": 2,
+          "src": "18:12:0"
+        },
+        "value": null
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 24,
+                "end_col_offset": 31,
+                "end_lineno": 8,
+                "id": "address",
+                "lineno": 8,
+                "node_id": 18,
+                "src": "99:7:0"
+              },
+              "arg": "_gauge",
+              "ast_type": "arg",
+              "col_offset": 16,
+              "end_col_offset": 31,
+              "end_lineno": 8,
+              "lineno": 8,
+              "node_id": 17,
+              "src": "91:15:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 16,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 31,
+          "end_lineno": 8,
+          "lineno": 8,
+          "node_id": 16,
+          "src": "91:15:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 41,
+            "end_lineno": 9,
+            "lineno": 9,
+            "msg": null,
+            "node_id": 20,
+            "src": "123:37:0",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 41,
+              "end_lineno": 9,
+              "left": {
+                "ast_type": "Subscript",
+                "col_offset": 11,
+                "end_col_offset": 36,
+                "end_lineno": 9,
+                "lineno": 9,
+                "node_id": 22,
+                "slice": {
+                  "ast_type": "Index",
+                  "col_offset": 29,
+                  "end_col_offset": 35,
+                  "end_lineno": 9,
+                  "lineno": 9,
+                  "node_id": 27,
+                  "src": "148:6:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 29,
+                    "end_col_offset": 35,
+                    "end_lineno": 9,
+                    "id": "_gauge",
+                    "lineno": 9,
+                    "node_id": 28,
+                    "src": "148:6:0"
+                  }
+                },
+                "src": "130:25:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "gauge_types_",
+                  "col_offset": 11,
+                  "end_col_offset": 28,
+                  "end_lineno": 9,
+                  "lineno": 9,
+                  "node_id": 23,
+                  "src": "130:17:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 11,
+                    "end_col_offset": 15,
+                    "end_lineno": 9,
+                    "id": "self",
+                    "lineno": 9,
+                    "node_id": 24,
+                    "src": "130:4:0"
+                  }
+                }
+              },
+              "lineno": 9,
+              "node_id": 21,
+              "op": {
+                "ast_type": "NotEq",
+                "col_offset": 11,
+                "end_col_offset": 41,
+                "end_lineno": 9,
+                "lineno": 9,
+                "node_id": 31,
+                "src": "130:30:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 40,
+                "end_col_offset": 41,
+                "end_lineno": 9,
+                "lineno": 9,
+                "node_id": 32,
+                "src": "159:1:0",
+                "value": 0
+              },
+              "src": "130:30:0"
+            }
+          },
+          {
+            "ast_type": "Return",
+            "col_offset": 4,
+            "end_col_offset": 40,
+            "end_lineno": 10,
+            "lineno": 10,
+            "node_id": 33,
+            "src": "165:36:0",
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 11,
+              "end_col_offset": 40,
+              "end_lineno": 10,
+              "left": {
+                "ast_type": "Subscript",
+                "col_offset": 11,
+                "end_col_offset": 36,
+                "end_lineno": 10,
+                "lineno": 10,
+                "node_id": 35,
+                "slice": {
+                  "ast_type": "Index",
+                  "col_offset": 29,
+                  "end_col_offset": 35,
+                  "end_lineno": 10,
+                  "lineno": 10,
+                  "node_id": 40,
+                  "src": "190:6:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 29,
+                    "end_col_offset": 35,
+                    "end_lineno": 10,
+                    "id": "_gauge",
+                    "lineno": 10,
+                    "node_id": 41,
+                    "src": "190:6:0"
+                  }
+                },
+                "src": "172:25:0",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "gauge_types_",
+                  "col_offset": 11,
+                  "end_col_offset": 28,
+                  "end_lineno": 10,
+                  "lineno": 10,
+                  "node_id": 36,
+                  "src": "172:17:0",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 11,
+                    "end_col_offset": 15,
+                    "end_lineno": 10,
+                    "id": "self",
+                    "lineno": 10,
+                    "node_id": 37,
+                    "src": "172:4:0"
+                  }
+                }
+              },
+              "lineno": 10,
+              "node_id": 34,
+              "op": {
+                "ast_type": "Sub",
+                "col_offset": 11,
+                "end_col_offset": 40,
+                "end_lineno": 10,
+                "lineno": 10,
+                "node_id": 44,
+                "src": "172:29:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 39,
+                "end_col_offset": 40,
+                "end_lineno": 10,
+                "lineno": 10,
+                "node_id": 45,
+                "src": "200:1:0",
+                "value": 1
+              },
+              "src": "172:29:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 5,
+            "end_lineno": 6,
+            "id": "view",
+            "lineno": 6,
+            "node_id": 46,
+            "src": "60:4:0"
+          },
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 7,
+            "id": "external",
+            "lineno": 7,
+            "node_id": 48,
+            "src": "66:8:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 40,
+        "end_lineno": 10,
+        "lineno": 8,
+        "name": "gauge_types",
+        "node_id": 15,
+        "pos": null,
+        "returns": {
+          "ast_type": "Name",
+          "col_offset": 36,
+          "end_col_offset": 42,
+          "end_lineno": 8,
+          "id": "int128",
+          "lineno": 8,
+          "node_id": 50,
+          "src": "111:6:0"
+        },
+        "src": "75:126:0"
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 28,
+                "end_col_offset": 35,
+                "end_lineno": 14,
+                "id": "address",
+                "lineno": 14,
+                "node_id": 55,
+                "src": "242:7:0"
+              },
+              "arg": "_gauge",
+              "ast_type": "arg",
+              "col_offset": 20,
+              "end_col_offset": 35,
+              "end_lineno": 14,
+              "lineno": 14,
+              "node_id": 54,
+              "src": "234:15:0"
+            },
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 44,
+                "end_col_offset": 50,
+                "end_lineno": 14,
+                "id": "int128",
+                "lineno": 14,
+                "node_id": 58,
+                "src": "258:6:0"
+              },
+              "arg": "_type",
+              "ast_type": "arg",
+              "col_offset": 37,
+              "end_col_offset": 50,
+              "end_lineno": 14,
+              "lineno": 14,
+              "node_id": 57,
+              "src": "251:13:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 20,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 50,
+          "end_lineno": 14,
+          "lineno": 14,
+          "node_id": 53,
+          "src": "234:30:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 41,
+            "end_lineno": 15,
+            "lineno": 15,
+            "node_id": 60,
+            "src": "271:37:0",
+            "target": {
+              "ast_type": "Subscript",
+              "col_offset": 4,
+              "end_col_offset": 29,
+              "end_lineno": 15,
+              "lineno": 15,
+              "node_id": 61,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 22,
+                "end_col_offset": 28,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 66,
+                "src": "289:6:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 22,
+                  "end_col_offset": 28,
+                  "end_lineno": 15,
+                  "id": "_gauge",
+                  "lineno": 15,
+                  "node_id": 67,
+                  "src": "289:6:0"
+                }
+              },
+              "src": "271:25:0",
+              "value": {
+                "ast_type": "Attribute",
+                "attr": "gauge_types_",
+                "col_offset": 4,
+                "end_col_offset": 21,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 62,
+                "src": "271:17:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 4,
+                  "end_col_offset": 8,
+                  "end_lineno": 15,
+                  "id": "self",
+                  "lineno": 15,
+                  "node_id": 63,
+                  "src": "271:4:0"
+                }
+              }
+            },
+            "value": {
+              "ast_type": "BinOp",
+              "col_offset": 32,
+              "end_col_offset": 41,
+              "end_lineno": 15,
+              "left": {
+                "ast_type": "Name",
+                "col_offset": 32,
+                "end_col_offset": 37,
+                "end_lineno": 15,
+                "id": "_type",
+                "lineno": 15,
+                "node_id": 71,
+                "src": "299:5:0"
+              },
+              "lineno": 15,
+              "node_id": 70,
+              "op": {
+                "ast_type": "Add",
+                "col_offset": 32,
+                "end_col_offset": 41,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 73,
+                "src": "299:9:0"
+              },
+              "right": {
+                "ast_type": "Int",
+                "col_offset": 40,
+                "end_col_offset": 41,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 74,
+                "src": "307:1:0",
+                "value": 1
+              },
+              "src": "299:9:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 13,
+            "id": "external",
+            "lineno": 13,
+            "node_id": 75,
+            "src": "205:8:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 41,
+        "end_lineno": 15,
+        "lineno": 14,
+        "name": "_set_gauge_type",
+        "node_id": 52,
+        "pos": null,
+        "returns": null,
+        "src": "214:94:0"
+      }
+    ],
+    "col_offset": 0,
+    "doc_string": null,
+    "end_col_offset": 41,
+    "end_lineno": 15,
+    "lineno": 1,
+    "name": "contracts/testing/GaugeControllerMock.vy",
+    "node_id": 0,
+    "src": "0:308:0"
+  },
+  "bytecode": "0x6101ca56600436101561000d576101c0565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a052633f9095b7600051141561012f5734156100ba57600080fd5b60043560205181106100cb57600080fd5b506000600060043560e05260c052604060c02054186100e957600080fd5b600060043560e05260c052604060c0205460016060518183038060405190131561011257600080fd5b809190121561012057600080fd5b9050905060005260206000f350005b63833ee62260005114156101bf57341561014857600080fd5b600435602051811061015957600080fd5b506060516024358060405190131561017057600080fd5b809190121561017e57600080fd5b5060243560016060518183018060405190131561019a57600080fd5b80919012156101a857600080fd5b90509050600060043560e05260c052604060c02055005b5b60006000fd5b6100046101ca036100046000396100046101ca036000f3",
+  "bytecodeSha1": "c0bc8174253b346def0ccb15f9ef93b0d7ef4fd0",
+  "compiler": {
+    "evm_version": "istanbul",
+    "version": "0.2.4"
+  },
+  "contractName": "GaugeControllerMock",
+  "coverageMap": {
+    "branches": {
+      "0": {
+        "GaugeControllerMock.gauge_types": {
+          "1": [
+            123,
+            160,
+            true
+          ]
+        }
+      }
+    },
+    "statements": {
+      "0": {
+        "GaugeControllerMock._set_gauge_type": {
+          "3": [
+            271,
+            308
+          ]
+        },
+        "GaugeControllerMock.gauge_types": {
+          "0": [
+            123,
+            160
+          ],
+          "2": [
+            165,
+            201
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "0x600436101561000d576101c0565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a052633f9095b7600051141561012f5734156100ba57600080fd5b60043560205181106100cb57600080fd5b506000600060043560e05260c052604060c02054186100e957600080fd5b600060043560e05260c052604060c0205460016060518183038060405190131561011257600080fd5b809190121561012057600080fd5b9050905060005260206000f350005b63833ee62260005114156101bf57341561014857600080fd5b600435602051811061015957600080fd5b506060516024358060405190131561017057600080fd5b809190121561017e57600080fd5b5060243560016060518183018060405190131561019a57600080fd5b80919012156101a857600080fd5b90509050600060043560e05260c052604060c02055005b5b60006000fd",
+  "deployedSourceMap": "-1:-1:0:-;;;;;:::-;;:::-;:::-;;;;;;;;;;;;;;;;;;;;75:126;;;;;;:::-;;;;:::-;;;;:::-;-1:-1;;;;75:126;;;:::-;;;;:::-;;159:1;130:17;148:6;-1:-1;;;;;;;;130:30;123:37;;:::-;;;;:::-;172:17;190:6;-1:-1;;;;;;;;172:29;200:1;172:29;;;;;;;;;;;;:::-;;;;:::-;;;;;;;:::-;;;;:::-;;;;;165:36;;;;;75:126;;:::-;214:94;;;;;;:::-;;;;:::-;;;;:::-;-1:-1;;;;214:94;;;:::-;;;;:::-;;-1:-1;;;;214:94;-1:-1;;214:94;;;;:::-;;;;:::-;;;;;;;:::-;;;;:::-;;299:5;:9;307:1;299:9;;;;;;;;;;;;:::-;;;;:::-;;;;;;;:::-;;;;:::-;;;-1:-1;;271:17;289:6;-1:-1;;;;;;;;271:37;214:94;:::-;-1:-1::-;;;;",
+  "language": "Vyper",
+  "natspec": {
+    "methods": {}
+  },
+  "offset": [
+    0,
+    309
+  ],
+  "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x1C0 JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0x1C MSTORE PUSH21 0x100000000000000000000 PUSH1 0x20 MSTORE PUSH16 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF PUSH1 0x40 MSTORE PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000 PUSH1 0x60 MSTORE PUSH21 0x12A5F1FFFFFFFFFFFFFFFFFFFFFFFFFDABF41C0 PUSH1 0x80 MSTORE PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFED5FAE00000000000000000 PUSH1 0xA0 MSTORE PUSH4 0x3F9095B7 PUSH1 0x0 MLOAD EQ ISZERO PUSH2 0x12F JUMPI CALLVALUE ISZERO PUSH2 0x0BA JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x4 CALLDATALOAD PUSH1 0x20 MLOAD DUP2 LT PUSH2 0x0CB JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x0 PUSH1 0x0 PUSH1 0x4 CALLDATALOAD PUSH1 0xE0 MSTORE PUSH1 0xC0 MSTORE PUSH1 0x40 PUSH1 0xC0 SHA3 SLOAD XOR PUSH2 0x0E9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 PUSH1 0x4 CALLDATALOAD PUSH1 0xE0 MSTORE PUSH1 0xC0 MSTORE PUSH1 0x40 PUSH1 0xC0 SHA3 SLOAD PUSH1 0x1 PUSH1 0x60 MLOAD DUP2 DUP4 SUB DUP1 PUSH1 0x40 MLOAD SWAP1 SGT ISZERO PUSH2 0x112 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 SWAP2 SWAP1 SLT ISZERO PUSH2 0x120 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP1 POP SWAP1 POP PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN POP STOP JUMPDEST PUSH4 0x833EE622 PUSH1 0x0 MLOAD EQ ISZERO PUSH2 0x1BF JUMPI CALLVALUE ISZERO PUSH2 0x148 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x4 CALLDATALOAD PUSH1 0x20 MLOAD DUP2 LT PUSH2 0x159 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x60 MLOAD PUSH1 0x24 CALLDATALOAD DUP1 PUSH1 0x40 MLOAD SWAP1 SGT ISZERO PUSH2 0x170 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 SWAP2 SWAP1 SLT ISZERO PUSH2 0x17E JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x24 CALLDATALOAD PUSH1 0x1 PUSH1 0x60 MLOAD DUP2 DUP4 ADD DUP1 PUSH1 0x40 MLOAD SWAP1 SGT ISZERO PUSH2 0x19A JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 SWAP2 SWAP1 SLT ISZERO PUSH2 0x1A8 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP1 POP SWAP1 POP PUSH1 0x0 PUSH1 0x4 CALLDATALOAD PUSH1 0xE0 MSTORE PUSH1 0xC0 MSTORE PUSH1 0x40 PUSH1 0xC0 SHA3 SSTORE STOP JUMPDEST JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "2": {
+      "op": "CALLDATASIZE"
+    },
+    "3": {
+      "op": "LT"
+    },
+    "4": {
+      "op": "ISZERO"
+    },
+    "5": {
+      "op": "PUSH2",
+      "value": "0x0D"
+    },
+    "8": {
+      "op": "JUMPI"
+    },
+    "9": {
+      "op": "PUSH2",
+      "value": "0x1C0"
+    },
+    "12": {
+      "op": "JUMP"
+    },
+    "13": {
+      "op": "JUMPDEST"
+    },
+    "14": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "16": {
+      "op": "CALLDATALOAD"
+    },
+    "17": {
+      "op": "PUSH1",
+      "value": "0x1C"
+    },
+    "19": {
+      "op": "MSTORE"
+    },
+    "20": {
+      "op": "PUSH21",
+      "value": "0x100000000000000000000"
+    },
+    "42": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "44": {
+      "op": "MSTORE"
+    },
+    "45": {
+      "op": "PUSH16",
+      "value": "0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    },
+    "62": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "64": {
+      "op": "MSTORE"
+    },
+    "65": {
+      "op": "PUSH32",
+      "value": "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000"
+    },
+    "98": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "100": {
+      "op": "MSTORE"
+    },
+    "101": {
+      "op": "PUSH21",
+      "value": "0x12A5F1FFFFFFFFFFFFFFFFFFFFFFFFFDABF41C0"
+    },
+    "123": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "125": {
+      "op": "MSTORE"
+    },
+    "126": {
+      "op": "PUSH32",
+      "value": "0xFFFFFFFFFFFFFFFFFFFFFFFED5FAE00000000000000000"
+    },
+    "159": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "161": {
+      "op": "MSTORE"
+    },
+    "162": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x3F9095B7"
+    },
+    "167": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "169": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "170": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "171": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "172": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x12F"
+    },
+    "175": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "176": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "177": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "178": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0BA"
+    },
+    "181": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "182": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "184": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "185": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "186": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "187": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "189": {
+      "op": "CALLDATALOAD"
+    },
+    "190": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "192": {
+      "op": "MLOAD"
+    },
+    "193": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "194": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "195": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0CB"
+    },
+    "198": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "199": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "201": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "202": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "203": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "204": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "205": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        159,
+        160
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 0,
+      "value": "0x0"
+    },
+    "207": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        130,
+        147
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "209": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        148,
+        154
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "211": {
+      "op": "CALLDATALOAD"
+    },
+    "212": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "214": {
+      "op": "MSTORE"
+    },
+    "215": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "217": {
+      "op": "MSTORE"
+    },
+    "218": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "220": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "222": {
+      "op": "SHA3"
+    },
+    "223": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        130,
+        160
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "224": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "XOR",
+      "path": "0"
+    },
+    "225": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0E9"
+    },
+    "228": {
+      "branch": 1,
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "229": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "231": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "232": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "233": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        123,
+        160
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "234": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        189
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 2,
+      "value": "0x0"
+    },
+    "236": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        190,
+        196
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "238": {
+      "op": "CALLDATALOAD"
+    },
+    "239": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "241": {
+      "op": "MSTORE"
+    },
+    "242": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "244": {
+      "op": "MSTORE"
+    },
+    "245": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "247": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "249": {
+      "op": "SHA3"
+    },
+    "250": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "251": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        200,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "253": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "255": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "256": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "257": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "258": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "259": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "260": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "262": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "263": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "264": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SGT",
+      "path": "0"
+    },
+    "265": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "266": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x112"
+    },
+    "269": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "270": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "272": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "273": {
+      "dev": "Integer underflow",
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "274": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "275": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "276": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "277": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "278": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SLT",
+      "path": "0"
+    },
+    "279": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "280": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "283": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "284": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "286": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "287": {
+      "dev": "Integer underflow",
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "288": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "289": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "290": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "291": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "292": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        172,
+        201
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "293": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        165,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "295": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        165,
+        201
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "296": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        165,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "298": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        165,
+        201
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "300": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        165,
+        201
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "301": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "302": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "303": {
+      "fn": "GaugeControllerMock.gauge_types",
+      "offset": [
+        75,
+        201
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "304": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x833EE622"
+    },
+    "309": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "311": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "312": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "313": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "314": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1BF"
+    },
+    "317": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "318": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "319": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "320": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x148"
+    },
+    "323": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "324": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "326": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "327": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "328": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "329": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "331": {
+      "op": "CALLDATALOAD"
+    },
+    "332": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "334": {
+      "op": "MLOAD"
+    },
+    "335": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "336": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "337": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x159"
+    },
+    "340": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "341": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "343": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "344": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "345": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "346": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "347": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "349": {
+      "op": "MLOAD"
+    },
+    "350": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "352": {
+      "op": "CALLDATALOAD"
+    },
+    "353": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "354": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "356": {
+      "op": "MLOAD"
+    },
+    "357": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "358": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "SGT",
+      "path": "0"
+    },
+    "359": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "360": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x170"
+    },
+    "363": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "364": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "366": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "367": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "368": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "369": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "370": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "371": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "372": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "SLT",
+      "path": "0"
+    },
+    "373": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "374": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x17E"
+    },
+    "377": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "378": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "380": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "381": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "382": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "383": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "384": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        304
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 3,
+      "value": "0x24"
+    },
+    "386": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "387": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        307,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "389": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "391": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "392": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "393": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "394": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "395": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "396": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "398": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "399": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "400": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SGT",
+      "path": "0"
+    },
+    "401": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "402": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x19A"
+    },
+    "405": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "406": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "408": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "409": {
+      "dev": "Integer overflow",
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "410": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "411": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "412": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "413": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "414": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SLT",
+      "path": "0"
+    },
+    "415": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "416": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1A8"
+    },
+    "419": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "420": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "422": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "423": {
+      "dev": "Integer overflow",
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "424": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "425": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "426": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        299,
+        308
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "427": {
+      "op": "SWAP1"
+    },
+    "428": {
+      "op": "POP"
+    },
+    "429": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        271,
+        288
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "431": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        289,
+        295
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "433": {
+      "op": "CALLDATALOAD"
+    },
+    "434": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "436": {
+      "op": "MSTORE"
+    },
+    "437": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "439": {
+      "op": "MSTORE"
+    },
+    "440": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "442": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "444": {
+      "op": "SHA3"
+    },
+    "445": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        271,
+        308
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "446": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "447": {
+      "fn": "GaugeControllerMock._set_gauge_type",
+      "offset": [
+        214,
+        308
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "448": {
+      "op": "JUMPDEST"
+    },
+    "449": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "451": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "453": {
+      "op": "REVERT"
+    }
+  },
+  "sha1": "13aa537ff7e45e7c40a97c24fc466b9b33eb18ff",
+  "source": "# @version 0.2.4\n\ngauge_types_: HashMap[address, int128]\n\n\n@view\n@external\ndef gauge_types(_gauge: address) -> int128:\n    assert self.gauge_types_[_gauge] != 0\n    return self.gauge_types_[_gauge] - 1\n\n\n@external\ndef _set_gauge_type(_gauge: address, _type: int128):\n    self.gauge_types_[_gauge] = _type + 1\n",
+  "sourceMap": "",
+  "sourcePath": "contracts/testing/GaugeControllerMock.vy",
+  "type": "contract"
+}

@@ -1,15 +1,24 @@
+from email.headerregistry import Address
 from brownie import ZERO_ADDRESS, AddressProvider, PoolInfo, Registry, Swaps, accounts
-from brownie.network.gas.strategies import GasNowScalingStrategy
 
 from scripts.add_pools import main as add_pools
 
 # modify this prior to mainnet use
-deployer = accounts.at("0x50414Ac6431279824df9968855181474c919a94B", force=True)
+deployer = accounts.load("kagla-deploy")
 
-ADDRESS_PROVIDER = "0x0000000022D53366457F9d5E68Ec105046FC4383"
-GAUGE_CONTROLLER = "0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB"
+ADDRESS_PROVIDER = "0x5067bF2952D3F3c184f3dc707F8CF6Dc4eab5858"
+GAUGE_CONTROLLER = "0x060DE8b98b5B1Cd9b387632099AC3b6B3308A822"
 
-gas_strategy = GasNowScalingStrategy("standard", "fast")
+
+def deploy_address_provider():
+    """
+    Deploy `Address Provider`.
+    """
+    balance = deployer.balance()
+    provider = AddressProvider.deploy(deployer, {"from": deployer})
+    print(f"AddressProvider deployed to: {provider.address}")
+    print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
+
 
 def deploy_registry():
     """
@@ -19,10 +28,10 @@ def deploy_registry():
 
     provider = AddressProvider.at(ADDRESS_PROVIDER)
     registry = Registry.deploy(
-        ADDRESS_PROVIDER, GAUGE_CONTROLLER, {"from": deployer, "gas_price": gas_strategy}
+        ADDRESS_PROVIDER, GAUGE_CONTROLLER, {"from": deployer}
     )
     add_pools(registry, deployer)
-    provider.set_address(0, registry, {"from": deployer, "gas_price": gas_strategy})
+    provider.set_address(0, registry, {"from": deployer})
 
     print(f"Registry deployed to: {registry.address}")
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
@@ -36,14 +45,14 @@ def deploy_pool_info():
 
     provider = AddressProvider.at(ADDRESS_PROVIDER)
 
-    pool_info = PoolInfo.deploy(provider, {"from": deployer, "gas_price": gas_strategy})
+    pool_info = PoolInfo.deploy(provider, {"from": deployer})
 
     if provider.max_id() == 0:
         provider.add_new_id(
-            pool_info, "PoolInfo Getters", {"from": deployer, "gas_price": gas_strategy}
+            pool_info, "PoolInfo Getters", {"from": deployer}
         )
     else:
-        provider.set_address(1, pool_info, {"from": deployer, "gas_price": gas_strategy})
+        provider.set_address(1, pool_info, {"from": deployer})
 
     print(f"PoolInfo deployed to: {pool_info.address}")
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
@@ -57,12 +66,12 @@ def deploy_swaps():
 
     provider = AddressProvider.at(ADDRESS_PROVIDER)
 
-    swaps = Swaps.deploy(provider, ZERO_ADDRESS, {"from": deployer, "gas_price": gas_strategy})
+    swaps = Swaps.deploy(provider, ZERO_ADDRESS, {"from": deployer})
 
     if provider.max_id() == 1:
-        provider.add_new_id(swaps, "Exchanges", {"from": deployer, "gas_price": gas_strategy})
+        provider.add_new_id(swaps, "Exchanges", {"from": deployer})
     else:
-        provider.set_address(2, swaps, {"from": deployer, "gas_price": gas_strategy})
+        provider.set_address(2, swaps, {"from": deployer})
 
     print(f"PoolInfo deployed to: {swaps.address}")
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")

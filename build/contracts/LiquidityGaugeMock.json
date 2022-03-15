@@ -1,0 +1,558 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "name": "_lp_token",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "gas": 1151,
+      "inputs": [],
+      "name": "lp_token",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts/testing/LiquidityGaugeMock.vy"
+  },
+  "ast": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 17,
+              "end_col_offset": 24,
+              "end_lineno": 4,
+              "id": "address",
+              "lineno": 4,
+              "node_id": 7,
+              "src": "36:7:1"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 10,
+          "end_col_offset": 25,
+          "end_lineno": 4,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 10,
+            "end_col_offset": 16,
+            "end_lineno": 4,
+            "id": "public",
+            "lineno": 4,
+            "node_id": 5,
+            "src": "29:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 4,
+          "node_id": 4,
+          "src": "29:15:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 25,
+        "end_lineno": 4,
+        "lineno": 4,
+        "node_id": 1,
+        "simple": 1,
+        "src": "19:25:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 8,
+          "end_lineno": 4,
+          "id": "lp_token",
+          "lineno": 4,
+          "node_id": 2,
+          "src": "19:8:1"
+        },
+        "value": null
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 24,
+                "end_col_offset": 31,
+                "end_lineno": 7,
+                "id": "address",
+                "lineno": 7,
+                "node_id": 12,
+                "src": "80:7:1"
+              },
+              "arg": "_lp_token",
+              "ast_type": "arg",
+              "col_offset": 13,
+              "end_col_offset": 31,
+              "end_lineno": 7,
+              "lineno": 7,
+              "node_id": 11,
+              "src": "69:18:1"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 13,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 31,
+          "end_lineno": 7,
+          "lineno": 7,
+          "node_id": 10,
+          "src": "69:18:1"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 29,
+            "end_lineno": 8,
+            "lineno": 8,
+            "node_id": 14,
+            "src": "94:25:1",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "lp_token",
+              "col_offset": 4,
+              "end_col_offset": 17,
+              "end_lineno": 8,
+              "lineno": 8,
+              "node_id": 15,
+              "src": "94:13:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 8,
+                "id": "self",
+                "lineno": 8,
+                "node_id": 16,
+                "src": "94:4:1"
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 20,
+              "end_col_offset": 29,
+              "end_lineno": 8,
+              "id": "_lp_token",
+              "lineno": 8,
+              "node_id": 19,
+              "src": "110:9:1"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 6,
+            "id": "external",
+            "lineno": 6,
+            "node_id": 21,
+            "src": "47:8:1"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 29,
+        "end_lineno": 8,
+        "lineno": 7,
+        "name": "__init__",
+        "node_id": 9,
+        "pos": null,
+        "returns": null,
+        "src": "56:63:1"
+      }
+    ],
+    "col_offset": 0,
+    "doc_string": null,
+    "end_col_offset": 29,
+    "end_lineno": 8,
+    "lineno": 1,
+    "name": "contracts/testing/LiquidityGaugeMock.vy",
+    "node_id": 0,
+    "src": "0:119:1"
+  },
+  "bytecode": "0x740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a05260206101ae6101403934156100a157600080fd5b60206101ae60c03960c05160205181106100ba57600080fd5b506101405160005561019656600436101561000d576100c9565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a0526382c6306660005114156100c85734156100ba57600080fd5b60005460005260206000f350005b5b60006000fd5b6100c7610196036100c76000396100c7610196036000f3",
+  "bytecodeSha1": "6f1ba0293833c1c2919e0413bc07338d5b6b3583",
+  "compiler": {
+    "evm_version": "istanbul",
+    "version": "0.2.4"
+  },
+  "contractName": "LiquidityGaugeMock",
+  "coverageMap": {
+    "branches": {
+      "0": {}
+    },
+    "statements": {
+      "0": {}
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "0x600436101561000d576100c9565b600035601c52740100000000000000000000000000000000000000006020526f7fffffffffffffffffffffffffffffff6040527fffffffffffffffffffffffffffffffff8000000000000000000000000000000060605274012a05f1fffffffffffffffffffffffffdabf41c006080527ffffffffffffffffffffffffed5fa0e000000000000000000000000000000000060a0526382c6306660005114156100c85734156100ba57600080fd5b60005460005260206000f350005b5b60006000fd",
+  "deployedSourceMap": "-1:-1:1:-;;;;;:::-;;:::-;:::-;;;;;;;;;;;;;;;;;;;;19:25;;;;;;:::-;;;;:::-;;;;:::-;;;;;;;;;;:::-;-1:-1::-;;;;",
+  "language": "Vyper",
+  "natspec": {
+    "methods": {}
+  },
+  "offset": [
+    0,
+    120
+  ],
+  "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x0C9 JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0x1C MSTORE PUSH21 0x100000000000000000000 PUSH1 0x20 MSTORE PUSH16 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF PUSH1 0x40 MSTORE PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000 PUSH1 0x60 MSTORE PUSH21 0x12A5F1FFFFFFFFFFFFFFFFFFFFFFFFFDABF41C0 PUSH1 0x80 MSTORE PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFED5FAE00000000000000000 PUSH1 0xA0 MSTORE PUSH4 0x82C63066 PUSH1 0x0 MLOAD EQ ISZERO PUSH2 0x0C8 JUMPI CALLVALUE ISZERO PUSH2 0x0BA JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN POP STOP JUMPDEST JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        119
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "2": {
+      "op": "CALLDATASIZE"
+    },
+    "3": {
+      "op": "LT"
+    },
+    "4": {
+      "op": "ISZERO"
+    },
+    "5": {
+      "op": "PUSH2",
+      "value": "0x0D"
+    },
+    "8": {
+      "op": "JUMPI"
+    },
+    "9": {
+      "op": "PUSH2",
+      "value": "0x0C9"
+    },
+    "12": {
+      "op": "JUMP"
+    },
+    "13": {
+      "op": "JUMPDEST"
+    },
+    "14": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "16": {
+      "op": "CALLDATALOAD"
+    },
+    "17": {
+      "op": "PUSH1",
+      "value": "0x1C"
+    },
+    "19": {
+      "op": "MSTORE"
+    },
+    "20": {
+      "op": "PUSH21",
+      "value": "0x100000000000000000000"
+    },
+    "42": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "44": {
+      "op": "MSTORE"
+    },
+    "45": {
+      "op": "PUSH16",
+      "value": "0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+    },
+    "62": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "64": {
+      "op": "MSTORE"
+    },
+    "65": {
+      "op": "PUSH32",
+      "value": "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000000000000000"
+    },
+    "98": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "100": {
+      "op": "MSTORE"
+    },
+    "101": {
+      "op": "PUSH21",
+      "value": "0x12A5F1FFFFFFFFFFFFFFFFFFFFFFFFFDABF41C0"
+    },
+    "123": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "125": {
+      "op": "MSTORE"
+    },
+    "126": {
+      "op": "PUSH32",
+      "value": "0xFFFFFFFFFFFFFFFFFFFFFFFED5FAE00000000000000000"
+    },
+    "159": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "161": {
+      "op": "MSTORE"
+    },
+    "162": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x82C63066"
+    },
+    "167": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "169": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "170": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "171": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "172": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0C8"
+    },
+    "175": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "176": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "177": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "178": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0BA"
+    },
+    "181": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "182": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "184": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "185": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "186": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "187": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "189": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "190": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "192": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "193": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "195": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "197": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "198": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "199": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "200": {
+      "offset": [
+        19,
+        44
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "201": {
+      "op": "JUMPDEST"
+    },
+    "202": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "204": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "206": {
+      "op": "REVERT"
+    }
+  },
+  "sha1": "c638c08b71a1bcbac98357025925c5ea9e893e79",
+  "source": "# @version 0.2.4\n\n\nlp_token: public(address)\n\n@external\ndef __init__(_lp_token: address):\n    self.lp_token = _lp_token\n",
+  "sourceMap": "",
+  "sourcePath": "contracts/testing/LiquidityGaugeMock.vy",
+  "type": "contract"
+}

@@ -1,10 +1,11 @@
 import json
 from pathlib import Path
+import os
 
 import requests
 
-GITHUB_POOLS = "https://api.github.com/repos/kagla-finance/kagla-contract/contents/contracts/pools"
-GITHUB_POOLDATA = "https://raw.githubusercontent.com/kagla-finance/kagla-contract/master/contracts/pools/{}/pooldata.json"  # noqa: E501
+GITHUB_POOLS = "https://{}@api.github.com/repos/kagla-finance/kagla-contract/contents/contracts/pools"
+GITHUB_POOLDATA = "https://{}@raw.githubusercontent.com/kagla-finance/kagla-contract/main/contracts/pools/{}/pooldata.json"  # noqa: E501
 
 
 def get_pool_data(force_fetch: bool = False) -> dict:
@@ -17,6 +18,7 @@ def get_pool_data(force_fetch: bool = False) -> dict:
 
     To update the pools, delete `pooldata.json` or use `brownie run get_pool_data`
     """
+    token = os.environ["GITHUB_TOKEN"]
     path = Path(__file__).parent.parent.joinpath("pooldata.json")
 
     if not force_fetch and path.exists():
@@ -28,10 +30,10 @@ def get_pool_data(force_fetch: bool = False) -> dict:
 
     print("Querying Github for pool deployments...")
     pool_data = {}
-    pool_names = [i["name"] for i in requests.get(GITHUB_POOLS).json() if i["type"] == "dir"]
+    pool_names = [i["name"] for i in requests.get(GITHUB_POOLS.format(token)).json() if i["type"] == "dir"]
 
     for name in pool_names:
-        data = requests.get(GITHUB_POOLDATA.format(name)).json()
+        data = requests.get(GITHUB_POOLDATA.format(token,name)).json()
         if "swap_address" not in data:
             print(f"Cannot add {name} - no deployment address!")
             continue

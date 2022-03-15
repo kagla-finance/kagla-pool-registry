@@ -1,9 +1,11 @@
+from multiprocessing import pool
 from brownie import Contract, Registry, accounts
 from brownie.exceptions import VirtualMachineError
 from brownie.network.gas.strategies import GasNowScalingStrategy
-
+import json
 from scripts.get_pool_data import get_pool_data
 from scripts.utils import pack_values
+from brownie.network.state import Chain
 
 # modify this prior to mainnet use
 DEPLOYER = "0x7EeAC6CDdbd1D0B8aF061742D41877D7F707289a"
@@ -20,11 +22,12 @@ RATE_METHOD_IDS = {
     "yERC20": "0x77c7b8fc",  # getPricePerFullShare
 }
 
-gas_strategy = GasNowScalingStrategy("standard", "fast")
 
 
 def add_pool(data, registry, deployer, pool_name):
-    swap = Contract(data["swap_address"])
+    chain = Chain()
+    manifest = json.load(open('./kagla-finance/kagla-contract@0.0.2/build/deployments/'+ str(chain.id) + "/" + data["swap_address"] + '.json'))
+    swap = Contract.from_abi(address = data["swap_address"], abi = manifest["abi"], name = manifest["contractName"])
     token = data["lp_token_address"]
     n_coins = len(data["coins"])
     decimals = pack_values([i.get("decimals", i.get("wrapped_decimals")) for i in data["coins"]])
@@ -32,7 +35,7 @@ def add_pool(data, registry, deployer, pool_name):
     if "base_pool" in data:
         # adding a metapool
         registry.add_metapool(
-            swap, n_coins, token, decimals, pool_name, {"from": deployer, "gas_price": gas_strategy}
+            swap, n_coins, token, decimals, pool_name, {"from": deployer}
         )
         return
 
@@ -59,7 +62,7 @@ def add_pool(data, registry, deployer, pool_name):
             has_initial_A,
             is_v1,
             pool_name,
-            {"from": deployer, "gas_price": gas_strategy},
+            {"from": deployer},
         )
     else:
         use_lending_rates = pack_values(["wrapped_decimals" in i for i in data["coins"]])
@@ -73,7 +76,7 @@ def add_pool(data, registry, deployer, pool_name):
             has_initial_A,
             is_v1,
             pool_name,
-            {"from": deployer, "gas_price": gas_strategy},
+            {"from": deployer},
         )
 
 
@@ -83,7 +86,7 @@ def add_gauges(data, registry, deployer):
     gauges += ["0x0000000000000000000000000000000000000000"] * (10 - len(gauges))
 
     if registry.get_gauges(pool)[0] != gauges:
-        registry.set_liquidity_gauges(pool, gauges, {"from": deployer, "gas_price": gas_strategy})
+        registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
 
 def main(registry=REGISTRY, deployer=DEPLOYER):
@@ -126,7 +129,7 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
 
         if gauges:
             registry.set_liquidity_gauges(
-                pool, gauges, {"from": deployer, "gas_price": gas_strategy}
+                pool, gauges, {"from": deployer}
             )
 
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
