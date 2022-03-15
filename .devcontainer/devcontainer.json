@@ -1,0 +1,18 @@
+{
+    "name": "Python 3",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/usr/local/bin/pylint"
+    },
+    "appPort": [
+        9001
+    ],
+    "postCreateCommand": "pip install -r requirements.txt",
+    "extensions": [
+        "ms-python.python"
+    ]
+}
