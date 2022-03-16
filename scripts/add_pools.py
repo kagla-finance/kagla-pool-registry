@@ -23,11 +23,12 @@ RATE_METHOD_IDS = {
 }
 
 
-
 def add_pool(data, registry, deployer, pool_name):
     chain = Chain()
-    manifest = json.load(open('./kagla-finance/kagla-contract@0.0.2/build/deployments/'+ str(chain.id) + "/" + data["swap_address"] + '.json'))
-    swap = Contract.from_abi(address = data["swap_address"], abi = manifest["abi"], name = manifest["contractName"])
+    manifest = json.load(open('./kagla-finance/kagla-contract@0.0.4/build/deployments/'
+                         + str(chain.id) + "/" + data["swap_address"] + '.json'))
+    swap = Contract.from_abi(address=data["swap_address"],
+                             abi=manifest["abi"], name=manifest["contractName"])
     token = data["lp_token_address"]
     n_coins = len(data["coins"])
     decimals = pack_values([i.get("decimals", i.get("wrapped_decimals")) for i in data["coins"]])
@@ -105,6 +106,8 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
 
     for name, data in pool_data:
         pool = data["swap_address"]
+        if pool != "0x6454c3293816412D65eAdBD4CFABec8e1C59E061":
+            continue
         if registry.get_n_coins(pool)[0] == 0:
             print(f"\nAdding {name}...")
             add_pool(data, registry, deployer, name)
