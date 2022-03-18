@@ -1,9 +1,11 @@
+import json
+
 from brownie import Contract, Registry, accounts
 from brownie.exceptions import VirtualMachineError
-import json
+from brownie.network.state import Chain
+
 from scripts.get_pool_data import get_pool_data
 from scripts.utils import pack_values
-from brownie.network.state import Chain
 
 # modify this prior to mainnet use
 DEPLOYER = "0x7EeAC6CDdbd1D0B8aF061742D41877D7F707289a"
