@@ -51,7 +51,7 @@ def registry(ERC20, Registry, provider, gauge_controller, alice, swap1, swap2, s
 
 @pytest.fixture(scope="module")
 def factory(pm, alice):
-    yield pm("curvefi/curve-factory@2.0.0").Factory.deploy({"from": alice})
+    yield pm("kagla-finance/kagla-factory@0.0.1").Factory.deploy({"from": alice})
 
 
 @pytest.fixture(scope="module")

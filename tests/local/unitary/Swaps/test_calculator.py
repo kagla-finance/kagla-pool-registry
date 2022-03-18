@@ -4,7 +4,8 @@ from brownie import ZERO_ADDRESS
 
 
 def test_admin_only(bob, registry_swap):
-    with brownie.reverts("dev: admin-only function"):
+    with brownie.reverts(""):
+        print(registry_swap)
         registry_swap.set_calculator(ZERO_ADDRESS, ZERO_ADDRESS, {"from": bob})
 
 
