@@ -1,4 +1,3 @@
-from email.headerregistry import Address
 from brownie import ZERO_ADDRESS, AddressProvider, PoolInfo, Registry, Swaps, accounts
 
 from scripts.add_pools import main as add_pools

@@ -1,7 +1,5 @@
-from multiprocessing import pool
 from brownie import Contract, Registry, accounts
 from brownie.exceptions import VirtualMachineError
-from brownie.network.gas.strategies import GasNowScalingStrategy
 import json
 from scripts.get_pool_data import get_pool_data
 from scripts.utils import pack_values
