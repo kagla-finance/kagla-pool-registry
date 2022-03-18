@@ -25,19 +25,25 @@ RATE_METHOD_IDS = {
 
 def add_pool(data, registry, deployer, pool_name):
     chain = Chain()
-    manifest = json.load(open('./kagla-finance/kagla-contract@0.0.4/build/deployments/'
-                         + str(chain.id) + "/" + data["swap_address"] + '.json'))
-    swap = Contract.from_abi(address=data["swap_address"],
-                             abi=manifest["abi"], name=manifest["contractName"])
+    manifest = json.load(
+        open(
+            "./kagla-finance/kagla-contract@0.0.4/build/deployments/"
+            + str(chain.id)
+            + "/"
+            + data["swap_address"]
+            + ".json"
+        )
+    )
+    swap = Contract.from_abi(
+        address=data["swap_address"], abi=manifest["abi"], name=manifest["contractName"]
+    )
     token = data["lp_token_address"]
     n_coins = len(data["coins"])
     decimals = pack_values([i.get("decimals", i.get("wrapped_decimals")) for i in data["coins"]])
 
     if "base_pool" in data:
         # adding a metapool
-        registry.add_metapool(
-            swap, n_coins, token, decimals, pool_name, {"from": deployer}
-        )
+        registry.add_metapool(swap, n_coins, token, decimals, pool_name, {"from": deployer})
         return
 
     is_v1 = data["lp_contract"] == "KaglaTokenV1"
@@ -131,8 +137,6 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
                 break
 
         if gauges:
-            registry.set_liquidity_gauges(
-                pool, gauges, {"from": deployer}
-            )
+            registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
