@@ -4,5 +4,5 @@ reports:
 autofetch_sources: true
 
 dependencies:
-  - curvefi/curve-factory@2.0.0
+  - kagla-finance/kagla-factory@0.0.1
   - kagla-finance/kagla-contract@0.0.4
