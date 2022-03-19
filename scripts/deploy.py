@@ -5,9 +5,9 @@ from scripts.add_pools import main as add_pools
 # modify this prior to mainnet use
 deployer = accounts.load("kagla-deploy")
 
-ADDRESS_PROVIDER = "0x5067bF2952D3F3c184f3dc707F8CF6Dc4eab5858"
+ADDRESS_PROVIDER = "0x07A7a65f6C78DA368b079EeA219A9D60c23EB5A5"
 GAUGE_CONTROLLER = "0x060DE8b98b5B1Cd9b387632099AC3b6B3308A822"
-REGISTRY = "0xf4A3D2215A39D1a2090eDd787ACb705bacA914D0"
+REGISTRY = "0xa95448E97d11D53AEb3782dc00Db69222bC8867E"
 
 
 def coin_count():

@@ -5,8 +5,13 @@
     "settings": {
         "python.pythonPath": "/usr/local/bin/python",
         "python.linting.enabled": true,
-        "python.linting.pylintEnabled": true,
-        "python.linting.pylintPath": "/usr/local/bin/pylint"
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.pylintPath": "/usr/local/bin/pylint",
+        "python.linting.flake8Args": [
+            "--max-line-length",
+            "150"
+        ]
     },
     "appPort": [
         9001
