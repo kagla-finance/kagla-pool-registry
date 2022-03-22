@@ -108,6 +108,11 @@ def get_pool_info(_pool: address) -> PoolInfo:
     registry: address = self.address_provider.get_registry()
 
     lp_token: address = Registry(registry).get_lp_token(_pool)
+    lp_token_total_supply: uint256 = ERC20(lp_token).totalSupply()
+    lp_token_virtual_price: uint256 = 0
+    if lp_token_total_supply != 0:
+        lp_token_virtual_price = Registry(registry).get_virtual_price_from_lp_token(lp_token)
+
     return PoolInfo({
         balances: Registry(registry).get_balances(_pool),
         underlying_balances: Registry(registry).get_underlying_balances(_pool),
@@ -115,8 +120,8 @@ def get_pool_info(_pool: address) -> PoolInfo:
         underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
         rates: Registry(registry).get_rates(_pool),
         lp_token: lp_token,
-        lp_token_total_supply: ERC20(lp_token).totalSupply(),
-        lp_token_virtual_price: Registry(registry).get_virtual_price_from_lp_token(lp_token),
+        lp_token_total_supply: lp_token_total_supply,
+        lp_token_virtual_price: lp_token_virtual_price,
         lp_token_symbol: ERC20(lp_token).symbol(),
         params: Registry(registry).get_parameters(_pool),
         is_meta: Registry(registry).is_meta(_pool),
