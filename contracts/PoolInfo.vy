@@ -7,10 +7,14 @@
 
 MAX_COINS: constant(int128) = 8
 
-
 interface AddressProvider:
     def get_registry() -> address: view
     def admin() -> address: view
+
+interface ERC20:
+    def balanceOf(_addr: address) -> uint256: view
+    def decimals() -> uint256: view
+    def totalSupply() -> uint256: view
 
 interface Registry:
     def get_coins(_pool: address) -> address[MAX_COINS]: view
@@ -24,6 +28,8 @@ interface Registry:
     def get_parameters(_pool: address) -> PoolParams: view
     def is_meta(_pool: address) -> bool: view
     def get_pool_name(_pool: address) -> String[64]: view
+    def get_pool_asset_type(_pool: address) -> uint256: view
+    def get_base_pool(_pool: address) -> address: view
 
 
 struct PoolParams:
@@ -45,16 +51,19 @@ struct PoolInfo:
     underlying_decimals: uint256[MAX_COINS]
     rates: uint256[MAX_COINS]
     lp_token: address
+    lp_token_total_supply: uint256
     params: PoolParams
     is_meta: bool
     name: String[64]
+    asset_type: uint256
+    base_pool: address
+
 
 struct PoolCoins:
     coins: address[MAX_COINS]
     underlying_coins: address[MAX_COINS]
     decimals: uint256[MAX_COINS]
     underlying_decimals: uint256[MAX_COINS]
-
 
 address_provider: public(AddressProvider)
 
@@ -95,14 +104,18 @@ def get_pool_info(_pool: address) -> PoolInfo:
     """
     registry: address = self.address_provider.get_registry()
 
+    lp_token: address = Registry(registry).get_lp_token(_pool)
     return PoolInfo({
         balances: Registry(registry).get_balances(_pool),
         underlying_balances: Registry(registry).get_underlying_balances(_pool),
         decimals: Registry(registry).get_decimals(_pool),
         underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
         rates: Registry(registry).get_rates(_pool),
-        lp_token: Registry(registry).get_lp_token(_pool),
+        lp_token: lp_token,
+        lp_token_total_supply: ERC20(lp_token).totalSupply(),
         params: Registry(registry).get_parameters(_pool),
         is_meta: Registry(registry).is_meta(_pool),
         name: Registry(registry).get_pool_name(_pool),
+        asset_type: Registry(registry).get_pool_asset_type(_pool),
+        base_pool: Registry(registry).get_base_pool(_pool)
     })
