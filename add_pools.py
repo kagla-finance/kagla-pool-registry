@@ -10,7 +10,7 @@ from scripts.utils import pack_values
 # modify this prior to mainnet use
 DEPLOYER = "0x7EeAC6CDdbd1D0B8aF061742D41877D7F707289a"
 
-REGISTRY = "0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c"
+REGISTRY = "0xa95448E97d11D53AEb3782dc00Db69222bC8867E"
 GAUGE_CONTROLLER = "0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB"
 
 RATE_METHOD_IDS = {
@@ -27,7 +27,7 @@ def add_pool(data, registry, deployer, pool_name):
     chain = Chain()
     manifest = json.load(
         open(
-            "./kagla-finance/kagla-contract@0.0.5/build/deployments/"
+            "./kagla-finance/kagla-contract@0.0.7/build/deployments/"
             + str(chain.id)
             + "/"
             + data["swap_address"]
