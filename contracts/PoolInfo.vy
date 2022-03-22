@@ -15,6 +15,7 @@ interface ERC20:
     def balanceOf(_addr: address) -> uint256: view
     def decimals() -> uint256: view
     def totalSupply() -> uint256: view
+    def symbol() -> String[64]: view
 
 interface Registry:
     def get_coins(_pool: address) -> address[MAX_COINS]: view
@@ -30,7 +31,7 @@ interface Registry:
     def get_pool_name(_pool: address) -> String[64]: view
     def get_pool_asset_type(_pool: address) -> uint256: view
     def get_base_pool(_pool: address) -> address: view
-
+    def get_virtual_price_from_lp_token(_token: address) -> uint256: view
 
 struct PoolParams:
     A: uint256
@@ -52,6 +53,8 @@ struct PoolInfo:
     rates: uint256[MAX_COINS]
     lp_token: address
     lp_token_total_supply: uint256
+    lp_token_virtual_price: uint256
+    lp_token_symbol: String[64]
     params: PoolParams
     is_meta: bool
     name: String[64]
@@ -113,6 +116,8 @@ def get_pool_info(_pool: address) -> PoolInfo:
         rates: Registry(registry).get_rates(_pool),
         lp_token: lp_token,
         lp_token_total_supply: ERC20(lp_token).totalSupply(),
+        lp_token_virtual_price: Registry(registry).get_virtual_price_from_lp_token(lp_token),
+        lp_token_symbol: ERC20(lp_token).symbol(),
         params: Registry(registry).get_parameters(_pool),
         is_meta: Registry(registry).is_meta(_pool),
         name: Registry(registry).get_pool_name(_pool),
