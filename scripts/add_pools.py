@@ -1,3 +1,4 @@
+from argparse import ZERO_OR_MORE
 import json
 
 from brownie import Contract, Registry, accounts
@@ -8,10 +9,9 @@ from scripts.get_pool_data import get_pool_data
 from scripts.utils import pack_values
 
 # modify this prior to mainnet use
-DEPLOYER = "0x7EeAC6CDdbd1D0B8aF061742D41877D7F707289a"
+DEPLOYER = accounts.load("kagla-deploy")
 
-REGISTRY = "0x646D52B4b6bA468AC36FF9D7c8aaaE4bE0C4ED82"
-GAUGE_CONTROLLER = "0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB"
+REGISTRY = "0x0B05118f9068a0019527d78793934b52052d9025"
 
 RATE_METHOD_IDS = {
     "ATokenMock": "0x00000000",
@@ -21,6 +21,13 @@ RATE_METHOD_IDS = {
     "renERC20": "0xbd6d894d",  # exchangeRateCurrent
     "yERC20": "0x77c7b8fc",  # getPricePerFullShare
 }
+
+def print_gauges_from_getistry(registry=REGISTRY, deployer=DEPLOYER):
+    reg = Registry.at(registry)
+    pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
+    for _, data in pool_data:
+        pool = data["swap_address"]
+        print(Contract(registry).get_gauges(pool, {"from": deployer}))
 
 
 def add_pool(data, registry, deployer, pool_name):
@@ -102,38 +109,44 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
     * Add new pools to the existing registry deployment
     * Add / update pool gauges within the registry
     """
+    print(registry, deployer)
     deployer = accounts.at(deployer, force=True)
     balance = deployer.balance()
     registry = Registry.at(registry)
+    gauge_controller = registry.gauge_controller()
+    print('gauge',gauge_controller)
     # sort keys leaving metapools last
     pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
-
     print("Adding pools to registry...")
-    print(pool_data)
+    count = 0
+    pool_names = ["3Pool", "Starlay 3Pool", "BUSD+3KGL"]
     for name, data in pool_data:
         pool = data["swap_address"]
+        name = pool_names[count]
+        count = count +1
         if registry.get_n_coins(pool)[0] == 0:
             print(f"\nAdding {name}...")
-            add_pool(data, registry, deployer, name)
+            add_pool(data, registry, deployer, "3Pool")
         else:
             print(f"\n{name} has already been added to registry")
 
         gauges = data["gauge_addresses"]
         gauges = gauges + ["0x0000000000000000000000000000000000000000"] * (10 - len(gauges))
-
+        
         if registry.get_gauges(pool)[0] == gauges:
             print(f"{name} gauges are up-to-date")
-            continue
-
+            #continue
         print(f"Updating gauges for {name}...")
+        print(pool, data["gauge_addresses"])
         for gauge in data["gauge_addresses"]:
             try:
-                Contract(GAUGE_CONTROLLER).gauge_types(gauge)
+                print('gauge:', gauge, 'controller:', gauge_controller)
+                #Contract(gauge_controller).gauge_types(gauge, {"from": deployer})
             except (ValueError, VirtualMachineError):
                 print(f"Gauge {gauge} is not known to GaugeController, cannot add to registry")
                 gauges = False
                 break
-
+        
         if gauges:
             registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 

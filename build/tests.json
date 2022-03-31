@@ -9,11 +9,11 @@
     "KaglaCalc": "b6c068b355d95dc57180715028d2a351365c13d9",
     "LiquidityGaugeMock": "6f1ba0293833c1c2919e0413bc07338d5b6b3583",
     "MetaPoolMock": "5e7bb2f9c63f83dc3a6da19aab59bd3d3b305ae4",
-    "PoolInfo": "607c2e129a43d1372d11ba1ccc0b979f10165111",
+    "PoolInfo": "f3a596983128d93550c1c9a5a706a0f187085bb4",
     "PoolMockV1": "57aab296b845499bf24b03b6b2c9f66f0b335d84",
     "PoolMockV2": "2de575570da5dbe0899ce34276436a14e2a25243",
     "RateCalcMock": "79df1fdc5351f2adac9fa8bdc0b8a98c921c3be2",
-    "Registry": "02e28f417b54fc69fa4aa67248a70fcbcda7517f",
+    "Registry": "cff1a41ac2ae4febae87f2e9a7db69a9c35f5ec1",
     "Swaps": "b7b37da67ac59ef5c29a47879b7e40a21b1a6615",
     "ankrETH": "c85c6c22d1c34d0edda9e7686d3b5266b61c1a34",
     "cERC20": "5ee544d0aa81599961d383a9e0623a8a14f21e60",
@@ -48,24 +48,6 @@
         "eaa0e6425f1964cc9a647d4db5a343b8f848a41c",
         "f28c7d5fabd0a74cdc58ae14ff6ccab56bb1411b",
         "fe9afd25840ac5e31b0593bbb22dd992298d88a2"
-      ]
-    },
-    "tests/local/unitary/Registry/test_get_rate_alt.py": {
-      "coverage": false,
-      "isolated": [
-        "AddressProvider",
-        "ERC20",
-        "GaugeControllerMock",
-        "PoolInfo",
-        "PoolMockV2",
-        "RateCalcMock",
-        "Registry",
-        "ankrETH"
-      ],
-      "results": "..",
-      "sha1": "5da199115d4c670cdb2a1832ff461608cdfbfdea",
-      "txhash": [
-        "a91c92f9e479ee08058f096faad88a323b8e66a5"
       ]
     }
   },
@@ -240,50 +222,6 @@
             50,
             52
           ]
-        ]
-      }
-    },
-    "a91c92f9e479ee08058f096faad88a323b8e66a5": {
-      "RateCalcMock": {
-        "0": [
-          [
-            0,
-            1
-          ],
-          [],
-          []
-        ]
-      },
-      "Registry": {
-        "0": [
-          [
-            20,
-            239,
-            240,
-            242,
-            243,
-            244,
-            245,
-            247,
-            251,
-            258
-          ],
-          [
-            241,
-            246,
-            250
-          ],
-          [
-            246,
-            248
-          ]
-        ]
-      },
-      "ankrETH": {
-        "0": [
-          [],
-          [],
-          []
         ]
       }
     },
