@@ -338,6 +338,7 @@ def find_pool_for_coins(_from: address, _to: address, i: uint256 = 0) -> address
     return self.markets[key][i]
 
 
+
 @view
 @external
 def get_n_coins(_pool: address) -> uint256[2]:
@@ -658,6 +659,15 @@ def get_pool_asset_type(_pool: address) -> uint256:
     """
     return self.pool_data[_pool].asset_type
 
+@view
+@external
+def get_base_pool(_pool: address) -> address:
+    """
+    @notice Query the base pool of `_pool`
+    @param _pool Pool Address
+    @return The base pool
+    """
+    return self.pool_data[_pool].base_pool
 
 # internal functionality used in admin setters
 

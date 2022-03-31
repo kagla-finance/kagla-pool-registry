@@ -5,9 +5,9 @@ from scripts.add_pools import main as add_pools
 # modify this prior to mainnet use
 deployer = accounts.load("kagla-deploy")
 
-ADDRESS_PROVIDER = "0x07A7a65f6C78DA368b079EeA219A9D60c23EB5A5"
-GAUGE_CONTROLLER = "0x060DE8b98b5B1Cd9b387632099AC3b6B3308A822"
-REGISTRY = "0xa95448E97d11D53AEb3782dc00Db69222bC8867E"
+ADDRESS_PROVIDER = "0x2E8de1e2911DF279644a964CdC3D1f6BaBf07a6A"
+GAUGE_CONTROLLER = "0xdfA149F0e8eb9F11D3664Cf8bE867484496a4c5a"
+REGISTRY = "0x0B05118f9068a0019527d78793934b52052d9025"
 
 
 def coin_count():
@@ -31,14 +31,19 @@ def deploy_registry():
     Deploy `Registry`, add all current pools, and set the address in `AddressProvider`.
     """
     balance = deployer.balance()
-
-    provider = AddressProvider.at(ADDRESS_PROVIDER)
     registry = Registry.deploy(ADDRESS_PROVIDER, GAUGE_CONTROLLER, {"from": deployer})
-    add_pools(registry, deployer)
-    provider.set_address(0, registry, {"from": deployer})
-
     print(f"Registry deployed to: {registry.address}")
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
+
+def add_pools_and_set_address():
+    add_pools_to_registry()
+    provider = AddressProvider.at(ADDRESS_PROVIDER)
+    registry = Registry.at(REGISTRY)
+    provider.set_address(0, registry, {"from": deployer})
+
+def add_pools_to_registry():
+    registry = Registry.at(REGISTRY)
+    add_pools(registry, deployer)
 
 
 def deploy_pool_info():
