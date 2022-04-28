@@ -5,4 +5,4 @@ autofetch_sources: true
 
 dependencies:
   - kagla-finance/kagla-factory@0.0.2
-  - kagla-finance/kagla-contract@0.0.10
+  - kagla-finance/kagla-contract@0.0.17

@@ -7,7 +7,7 @@ import requests
 GITHUB_POOLS = (
     "https://{}@api.github.com/repos/kagla-finance/kagla-contract/contents/contracts/pools"
 )
-GITHUB_POOLDATA = "https://{}@raw.githubusercontent.com/kagla-finance/kagla-contract/main/contracts/pools/{}/pooldata.json"  # noqa: E501
+GITHUB_POOLDATA = "https://{}@raw.githubusercontent.com/kagla-finance/kagla-contract/feature/shiden-test/contracts/pools/{}/pooldata.json"  # noqa: E501
 
 
 def get_pool_data(force_fetch: bool = False) -> dict:
@@ -33,8 +33,9 @@ def get_pool_data(force_fetch: bool = False) -> dict:
     print("Querying Github for pool deployments...")
     pool_data = {}
     pool_names = [
-        i["name"] for i in requests.get(GITHUB_POOLS.format(token)).json() if i["type"] == "dir"
+        "bai"
     ]
+    print(pool_names)
 
     for name in pool_names:
         data = requests.get(GITHUB_POOLDATA.format(token, name)).json()

@@ -11,7 +11,7 @@ from scripts.utils import pack_values
 # modify this prior to mainnet use
 DEPLOYER = accounts.load("kagla-deploy")
 
-REGISTRY = "0x0B05118f9068a0019527d78793934b52052d9025"
+REGISTRY = "0x91CcaC062Af9d7AC8B9Cee1Bc1A5Dc8b640758df"
 
 RATE_METHOD_IDS = {
     "ATokenMock": "0x00000000",
@@ -34,8 +34,8 @@ def add_pool(data, registry, deployer, pool_name):
     chain = Chain()
     manifest = json.load(
         open(
-            "./kagla-finance/kagla-contract@0.0.7/build/deployments/"
-            + str(chain.id)
+            "./kagla-finance/kagla-contract@0.0.17/build/deployments/"
+            + str(336)
             + "/"
             + data["swap_address"]
             + ".json"
@@ -47,7 +47,6 @@ def add_pool(data, registry, deployer, pool_name):
     token = data["lp_token_address"]
     n_coins = len(data["coins"])
     decimals = pack_values([i.get("decimals", i.get("wrapped_decimals")) for i in data["coins"]])
-
     if "base_pool" in data:
         # adding a metapool
         registry.add_metapool(swap, n_coins, token, decimals, pool_name, {"from": deployer})
@@ -114,19 +113,20 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
     balance = deployer.balance()
     registry = Registry.at(registry)
     gauge_controller = registry.gauge_controller()
-    print('gauge',gauge_controller)
+    print('gauge', gauge_controller)
     # sort keys leaving metapools last
     pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
     print("Adding pools to registry...")
     count = 0
-    pool_names = ["3Pool", "Starlay 3Pool", "BUSD+3KGL"]
+    pool_names = ["BAI+3KGL"]
     for name, data in pool_data:
+        print(name, data)
         pool = data["swap_address"]
         name = pool_names[count]
-        count = count +1
+        count = count + 1
         if registry.get_n_coins(pool)[0] == 0:
             print(f"\nAdding {name}...")
-            add_pool(data, registry, deployer, "3Pool")
+            add_pool(data, registry, deployer, name)
         else:
             print(f"\n{name} has already been added to registry")
 
@@ -135,7 +135,7 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
         
         if registry.get_gauges(pool)[0] == gauges:
             print(f"{name} gauges are up-to-date")
-            #continue
+            continue
         print(f"Updating gauges for {name}...")
         print(pool, data["gauge_addresses"])
         for gauge in data["gauge_addresses"]:
@@ -148,6 +148,7 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
                 break
         
         if gauges:
+            print("pool,gauges:", pool, gauges)
             registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
