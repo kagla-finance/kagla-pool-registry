@@ -1,0 +1,348 @@
+{
+  "contracts": {
+    "AddressProvider": "881f4150cb1281ad5cf965062ad847a187c543e6",
+    "CryptoRegistry": "5410727fa4e03f4b5020fc26873401ee0ef8760c",
+    "ERC20": "b3509988a4088a7f6c30a7ab98f433f45f8d6175",
+    "ERC20NoReturn": "2c1650d34c3730773375c1d6cac1fd99d0252d70",
+    "ERC20ReturnFalse": "e11c1a784298aec8f2e9d19d32a786576fd66762",
+    "GaugeControllerMock": "c0bc8174253b346def0ccb15f9ef93b0d7ef4fd0",
+    "KaglaCalc": "b6c068b355d95dc57180715028d2a351365c13d9",
+    "LiquidityGaugeMock": "6f1ba0293833c1c2919e0413bc07338d5b6b3583",
+    "MetaPoolMock": "5e7bb2f9c63f83dc3a6da19aab59bd3d3b305ae4",
+    "PoolInfo": "f3a596983128d93550c1c9a5a706a0f187085bb4",
+    "PoolMockV1": "57aab296b845499bf24b03b6b2c9f66f0b335d84",
+    "PoolMockV2": "2de575570da5dbe0899ce34276436a14e2a25243",
+    "RateCalcMock": "79df1fdc5351f2adac9fa8bdc0b8a98c921c3be2",
+    "Registry": "cff1a41ac2ae4febae87f2e9a7db69a9c35f5ec1",
+    "Swaps": "b7b37da67ac59ef5c29a47879b7e40a21b1a6615",
+    "ankrETH": "c85c6c22d1c34d0edda9e7686d3b5266b61c1a34",
+    "cERC20": "5ee544d0aa81599961d383a9e0623a8a14f21e60",
+    "yERC20": "f7bde86a64a23133891d13bc400f23b91bba28e6"
+  },
+  "tests": {
+    "tests/local/unitary/AddressProvider/test_admin.py": {
+      "coverage": true,
+      "isolated": [
+        "AddressProvider"
+      ],
+      "results": ".........",
+      "sha1": "fd06b52148d328a9a7825e49273a0a3865fe3a7a",
+      "txhash": [
+        "02d4d109614051b9093f8d513c2bd45949c76633",
+        "03d86034599aae70ac76a3e64ce2899924e53545",
+        "06e7dc3a2c8d4eaf487f8cb41303d5f0ad893606",
+        "0a5ba7a003718d4d755f8da64e8b90f6cf4d226e",
+        "39bf410bc9e5fc33ee4a8fdb4f0804dfe4fc8f7f",
+        "470e0854b12dd3e9f4fd135a0b081663b9f8f594",
+        "594f5550e6a7f8d7767cd603a5f556c59b87009c",
+        "6b9eb9418a06e913c1e51ea78e71c5b2b8919597",
+        "718dc7a129768f56f816986a43af592c7b1eb61a",
+        "743fc8c1af42539c0262ff8e6b93e664336d871d",
+        "79958ff64016640c9a6f99dfe403271ab650a0cf",
+        "b341ac1bce02cf3a6463af5a339081e7d4efc8c5",
+        "b693704e201f7428ae267be2b3e0362d7af97eac",
+        "c1bf93fe666b3230506ecc62ca9cf7703c4cac02",
+        "d40dfae7da8bb81cb8f958d4404db1e7843c8ae4",
+        "dc21798461aa14cfd7c1187bcb991d01cb67acce",
+        "dd8b0bef5bfdd11cc7ecc64629fa6f74ebd36e09",
+        "eaa0e6425f1964cc9a647d4db5a343b8f848a41c",
+        "f28c7d5fabd0a74cdc58ae14ff6ccab56bb1411b",
+        "fe9afd25840ac5e31b0593bbb22dd992298d88a2"
+      ]
+    }
+  },
+  "tx": {
+    "02d4d109614051b9093f8d513c2bd45949c76633": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51,
+            53,
+            54,
+            55,
+            56,
+            57
+          ],
+          [],
+          [
+            48,
+            50,
+            52
+          ]
+        ]
+      }
+    },
+    "03d86034599aae70ac76a3e64ce2899924e53545": {
+      "AddressProvider": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "06e7dc3a2c8d4eaf487f8cb41303d5f0ad893606": {
+      "AddressProvider": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "0a5ba7a003718d4d755f8da64e8b90f6cf4d226e": {
+      "AddressProvider": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "39bf410bc9e5fc33ee4a8fdb4f0804dfe4fc8f7f": {
+      "AddressProvider": {
+        "0": [
+          [
+            47
+          ],
+          [
+            48
+          ],
+          []
+        ]
+      }
+    },
+    "470e0854b12dd3e9f4fd135a0b081663b9f8f594": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51
+          ],
+          [
+            52
+          ],
+          [
+            48,
+            50
+          ]
+        ]
+      }
+    },
+    "594f5550e6a7f8d7767cd603a5f556c59b87009c": {
+      "AddressProvider": {
+        "0": [
+          [
+            38,
+            40
+          ],
+          [
+            41
+          ],
+          [
+            39
+          ]
+        ]
+      }
+    },
+    "6b9eb9418a06e913c1e51ea78e71c5b2b8919597": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51,
+            53,
+            54,
+            55,
+            56,
+            57
+          ],
+          [],
+          [
+            48,
+            50,
+            52
+          ]
+        ]
+      }
+    },
+    "718dc7a129768f56f816986a43af592c7b1eb61a": {
+      "AddressProvider": {
+        "0": [
+          [
+            38,
+            40,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          [],
+          [
+            39,
+            41
+          ]
+        ]
+      }
+    },
+    "743fc8c1af42539c0262ff8e6b93e664336d871d": {
+      "AddressProvider": {
+        "0": [
+          [
+            38
+          ],
+          [
+            39
+          ],
+          []
+        ]
+      }
+    },
+    "79958ff64016640c9a6f99dfe403271ab650a0cf": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51,
+            53,
+            54,
+            55,
+            56,
+            57
+          ],
+          [],
+          [
+            48,
+            50,
+            52
+          ]
+        ]
+      }
+    },
+    "b341ac1bce02cf3a6463af5a339081e7d4efc8c5": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49
+          ],
+          [
+            50
+          ],
+          [
+            48
+          ]
+        ]
+      }
+    },
+    "b693704e201f7428ae267be2b3e0362d7af97eac": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51
+          ],
+          [
+            52
+          ],
+          [
+            48,
+            50
+          ]
+        ]
+      }
+    },
+    "c1bf93fe666b3230506ecc62ca9cf7703c4cac02": {
+      "AddressProvider": {
+        "0": [
+          [
+            38,
+            40,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          [],
+          [
+            39,
+            41
+          ]
+        ]
+      }
+    },
+    "d40dfae7da8bb81cb8f958d4404db1e7843c8ae4": {
+      "AddressProvider": {
+        "0": [
+          [
+            47,
+            49,
+            51
+          ],
+          [
+            52
+          ],
+          [
+            48,
+            50
+          ]
+        ]
+      }
+    },
+    "dc21798461aa14cfd7c1187bcb991d01cb67acce": {
+      "AddressProvider": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "dd8b0bef5bfdd11cc7ecc64629fa6f74ebd36e09": {
+      "AddressProvider": {
+        "0": [
+          [
+            58,
+            60,
+            61
+          ],
+          [],
+          [
+            59
+          ]
+        ]
+      }
+    },
+    "eaa0e6425f1964cc9a647d4db5a343b8f848a41c": {
+      "AddressProvider": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "f28c7d5fabd0a74cdc58ae14ff6ccab56bb1411b": {},
+    "fe9afd25840ac5e31b0593bbb22dd992298d88a2": {
+      "AddressProvider": {
+        "0": [
+          [
+            58
+          ],
+          [
+            59
+          ],
+          []
+        ]
+      }
+    }
+  }
+}

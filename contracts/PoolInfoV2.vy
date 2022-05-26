@@ -11,6 +11,9 @@ interface AddressProvider:
     def get_registry() -> address: view
     def admin() -> address: view
 
+interface ZapRegistry:
+    def zaps(pool: address) -> address: view
+
 interface ERC20:
     def balanceOf(_addr: address) -> uint256: view
     def decimals() -> uint256: view
@@ -60,6 +63,7 @@ struct PoolInfo:
     name: String[64]
     asset_type: uint256
     base_pool: address
+    zap: address
 
 
 struct PoolCoins:
@@ -69,11 +73,12 @@ struct PoolCoins:
     underlying_decimals: uint256[MAX_COINS]
 
 address_provider: public(AddressProvider)
-
+zap_registry: public(ZapRegistry)
 
 @external
-def __init__(_provider: address):
+def __init__(_provider: address, _zap_registry: address):
     self.address_provider = AddressProvider(_provider)
+    self.zap_registry = ZapRegistry(_zap_registry)
 
 
 @view
@@ -127,5 +132,6 @@ def get_pool_info(_pool: address) -> PoolInfo:
         is_meta: Registry(registry).is_meta(_pool),
         name: Registry(registry).get_pool_name(_pool),
         asset_type: Registry(registry).get_pool_asset_type(_pool),
-        base_pool: Registry(registry).get_base_pool(_pool)
+        base_pool: Registry(registry).get_base_pool(_pool),
+        zap: self.zap_registry.zaps(_pool)
     })

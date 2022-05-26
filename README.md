@@ -8,9 +8,9 @@ See the [documentation](https://kagla.readthedocs.io/) for information on how th
 
 ## Deployments
 
-- [`AddressProvider`](contracts/AddressProvider.vy): [0x0000000022D53366457F9d5E68Ec105046FC4383](https://etherscan.io/address/0x0000000022d53366457f9d5e68ec105046fc4383)
-- [`Registry`](contracts/Registry.vy): [0x90e00ace148ca3b23ac1bc8c240c2a7dd9c2d7f5](https://etherscan.io/address/0x90e00ace148ca3b23ac1bc8c240c2a7dd9c2d7f5)
-- [`PoolInfo`](contracts/PoolInfo.vy): [0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C](https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C)
+- [`AddressProvider`](contracts/AddressProvider.vy): [TBD](https://etherscan.io/address/TBD)
+- [`Registry`](contracts/Registry.vy): [TBD](https://etherscan.io/address/TBD)
+- [`PoolInfo`](contracts/PoolInfo.vy): [TBD](https://etherscan.io/address/TBD)
 
 ## Testing and Development
 

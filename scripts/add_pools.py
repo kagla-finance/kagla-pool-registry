@@ -1,15 +1,17 @@
+from argparse import ZERO_OR_MORE
+import json
+
 from brownie import Contract, Registry, accounts
 from brownie.exceptions import VirtualMachineError
-from brownie.network.gas.strategies import GasNowScalingStrategy
+from brownie.network.state import Chain
 
 from scripts.get_pool_data import get_pool_data
 from scripts.utils import pack_values
 
 # modify this prior to mainnet use
-DEPLOYER = "0x7EeAC6CDdbd1D0B8aF061742D41877D7F707289a"
+DEPLOYER = accounts.load("kagla-deploy")
 
-REGISTRY = "0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c"
-GAUGE_CONTROLLER = "0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB"
+REGISTRY = "0x0B05118f9068a0019527d78793934b52052d9025"
 
 RATE_METHOD_IDS = {
     "ATokenMock": "0x00000000",
@@ -20,20 +22,35 @@ RATE_METHOD_IDS = {
     "yERC20": "0x77c7b8fc",  # getPricePerFullShare
 }
 
-gas_strategy = GasNowScalingStrategy("standard", "fast")
+def print_gauges_from_getistry(registry=REGISTRY, deployer=DEPLOYER):
+    reg = Registry.at(registry)
+    pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
+    for _, data in pool_data:
+        pool = data["swap_address"]
+        print(Contract(registry).get_gauges(pool, {"from": deployer}))
 
 
 def add_pool(data, registry, deployer, pool_name):
-    swap = Contract(data["swap_address"])
+    chain = Chain()
+    manifest = json.load(
+        open(
+            "./kagla-finance/kagla-contract@0.0.7/build/deployments/"
+            + str(chain.id)
+            + "/"
+            + data["swap_address"]
+            + ".json"
+        )
+    )
+    swap = Contract.from_abi(
+        address=data["swap_address"], abi=manifest["abi"], name=manifest["contractName"]
+    )
     token = data["lp_token_address"]
     n_coins = len(data["coins"])
     decimals = pack_values([i.get("decimals", i.get("wrapped_decimals")) for i in data["coins"]])
 
     if "base_pool" in data:
         # adding a metapool
-        registry.add_metapool(
-            swap, n_coins, token, decimals, pool_name, {"from": deployer, "gas_price": gas_strategy}
-        )
+        registry.add_metapool(swap, n_coins, token, decimals, pool_name, {"from": deployer})
         return
 
     is_v1 = data["lp_contract"] == "KaglaTokenV1"
@@ -59,7 +76,7 @@ def add_pool(data, registry, deployer, pool_name):
             has_initial_A,
             is_v1,
             pool_name,
-            {"from": deployer, "gas_price": gas_strategy},
+            {"from": deployer},
         )
     else:
         use_lending_rates = pack_values(["wrapped_decimals" in i for i in data["coins"]])
@@ -73,7 +90,7 @@ def add_pool(data, registry, deployer, pool_name):
             has_initial_A,
             is_v1,
             pool_name,
-            {"from": deployer, "gas_price": gas_strategy},
+            {"from": deployer},
         )
 
 
@@ -83,7 +100,7 @@ def add_gauges(data, registry, deployer):
     gauges += ["0x0000000000000000000000000000000000000000"] * (10 - len(gauges))
 
     if registry.get_gauges(pool)[0] != gauges:
-        registry.set_liquidity_gauges(pool, gauges, {"from": deployer, "gas_price": gas_strategy})
+        registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
 
 def main(registry=REGISTRY, deployer=DEPLOYER):
@@ -92,41 +109,45 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
     * Add new pools to the existing registry deployment
     * Add / update pool gauges within the registry
     """
+    print(registry, deployer)
     deployer = accounts.at(deployer, force=True)
     balance = deployer.balance()
     registry = Registry.at(registry)
+    gauge_controller = registry.gauge_controller()
+    print('gauge',gauge_controller)
     # sort keys leaving metapools last
     pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
-
     print("Adding pools to registry...")
-
+    count = 0
+    pool_names = ["3Pool", "Starlay 3Pool", "BUSD+3KGL"]
     for name, data in pool_data:
         pool = data["swap_address"]
+        name = pool_names[count]
+        count = count +1
         if registry.get_n_coins(pool)[0] == 0:
             print(f"\nAdding {name}...")
-            add_pool(data, registry, deployer, name)
+            add_pool(data, registry, deployer, "3Pool")
         else:
             print(f"\n{name} has already been added to registry")
 
         gauges = data["gauge_addresses"]
         gauges = gauges + ["0x0000000000000000000000000000000000000000"] * (10 - len(gauges))
-
+        
         if registry.get_gauges(pool)[0] == gauges:
             print(f"{name} gauges are up-to-date")
-            continue
-
+            #continue
         print(f"Updating gauges for {name}...")
+        print(pool, data["gauge_addresses"])
         for gauge in data["gauge_addresses"]:
             try:
-                Contract(GAUGE_CONTROLLER).gauge_types(gauge)
+                print('gauge:', gauge, 'controller:', gauge_controller)
+                #Contract(gauge_controller).gauge_types(gauge, {"from": deployer})
             except (ValueError, VirtualMachineError):
                 print(f"Gauge {gauge} is not known to GaugeController, cannot add to registry")
                 gauges = False
                 break
-
+        
         if gauges:
-            registry.set_liquidity_gauges(
-                pool, gauges, {"from": deployer, "gas_price": gas_strategy}
-            )
+            registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
     print(f"Total gas used: {(balance - deployer.balance()) / 1e18:.4f} eth")
