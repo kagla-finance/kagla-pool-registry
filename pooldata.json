@@ -1,127 +1,181 @@
 {
   "3pool": {
-    "coins": [
-      {
-        "decimals": 18,
-        "name": "DAI",
-        "tethered": false,
-        "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb"
-      },
-      {
-        "decimals": 6,
-        "name": "USDC",
-        "tethered": false,
-        "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98"
-      },
-      {
-        "decimals": 6,
-        "name": "USDT",
-        "tethered": false,
-        "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283"
-      }
-    ],
-    "gauge_addresses": [
-      "0xDbd39f12569F79aaFfEDceE412a5A7e88C413381"
-    ],
+    "lp_contract": "KaglaTokenV3",
+    "swap_address": "0x1127aAA2EeA3Cea66Cf2720E9908899d0DC94f06",
+    "lp_token_address": "0x483a039d157c72bf6F8375F9C431b58b05e9F83C",
+    "gauge_addresses": ["0x3F41c725DD5c1a75479Ed9DB1fa8Eac77A6f76E9"],
     "lp_constructor": {
       "name": "Kagla.fi DAI/USDC/USDT",
       "symbol": "3KGL"
     },
-    "lp_contract": "KaglaTokenV3",
-    "lp_token_address": "0xB5a443b1d191b9b9525565014Cc82c4dcfaD13F4",
-    "swap_address": "0x8b3eA3B6bf56E4FA6BC81034F737b67EE85cB3bb",
     "swap_constructor": {
       "_A": 2000,
-      "_admin_fee": 5000000000,
-      "_fee": 4000000
-    }
+      "_fee": 4000000,
+      "_admin_fee": 5000000000
+    },
+    "coins": [
+      {
+        "name": "DAI",
+        "decimals": 18,
+        "tethered": false,
+        "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60"
+      },
+      {
+        "name": "USDC",
+        "decimals": 6,
+        "tethered": false,
+        "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397"
+      },
+      {
+        "name": "USDT",
+        "decimals": 6,
+        "tethered": false,
+        "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8"
+      }
+    ]
   },
   "busd": {
     "base_pool": "3pool",
-    "coins": [
-      {
-        "decimals": 18,
-        "name": "BUSD",
-        "tethered": false,
-        "underlying_address": "0x4Bf769b05E832FCdc9053fFFBC78Ca889aCb5E1E"
-      },
-      {
-        "base_pool_token": true,
-        "decimals": 18,
-        "name": "3KGL",
-        "underlying_address": "0xB5a443b1d191b9b9525565014Cc82c4dcfaD13F4"
-      }
-    ],
-    "gauge_addresses": [
-      "0xFcCc55F7f4B08465D8f9fCF1a13DcEeCb7166CC6"
-    ],
-    "lp_constructor": {
-      "name": "Kagla.fi BUSD/3Kgl",
-      "symbol": "BUSD3KGL"
-    },
+    "pool_types": ["meta"],
     "lp_contract": "KaglaTokenV3",
-    "lp_token_address": "0x3DC9633D3Ce3EDA31eF131b77a9Ff1426037f366",
-    "pool_types": [
-      "meta"
-    ],
-    "swap_address": "0x553215F108a5A2F46B6FF3e64Dc395bb9c5D5D3F",
+    "swap_address": "0xb0b86B32085310c62417885d6F124943101525b0",
+    "lp_token_address": "0x48200506115C977256dFcAC0FEf26F1A00f079e9",
+    "zap_address": "0xbD85dc51DD223d0e3c43b6c8A7ae0c76604C8B80",
+    "gauge_addresses": ["0xF05287d053546b3cc767175Db11A40393febcc4f"],
+    "lp_constructor": {
+      "symbol": "BUSD3KGL",
+      "name": "Kagla.fi BUSD/3Kgl"
+    },
     "swap_constructor": {
       "_A": 500,
-      "_admin_fee": 5000000000,
-      "_fee": 4000000
+      "_fee": 4000000,
+      "_admin_fee": 5000000000
     },
-    "zap_address": "0xB149f3873af572452392F16e30871F6B658cC2c7"
-  },
-  "starlay": {
     "coins": [
       {
+        "name": "BUSD",
         "decimals": 18,
-        "name": "lDAI",
         "tethered": false,
-        "underlying_address": "0x6De33698e9e9b787e09d3Bd7771ef63557E148bb",
-        "underlying_name": "DAI",
-        "wrapped_address": "0x4dd9c468A44F3FEF662c35c1E9a6108B70415C2c",
-        "wrapped_decimals": 18
+        "underlying_address": "0x0156412a53C6cc607135C7D6374913C5DDF8E55E"
       },
       {
-        "decimals": 6,
-        "name": "lUSDC",
-        "tethered": false,
-        "underlying_address": "0x6a2d262D56735DbA19Dd70682B39F6bE9a931D98",
-        "underlying_name": "USDC",
-        "wrapped_address": "0xC404E12D3466acCB625c67dbAb2E1a8a457DEf3c",
-        "wrapped_decimals": 6
-      },
-      {
-        "decimals": 6,
-        "name": "lUSDT",
-        "tethered": false,
-        "underlying_address": "0x3795C36e7D12A8c252A20C5a7B455f7c57b60283",
-        "underlying_name": "USDT",
-        "wrapped_address": "0x430D50963d9635bBef5a2fF27BD0bDDc26ed691F",
-        "wrapped_decimals": 6
+        "name": "3KGL",
+        "decimals": 18,
+        "base_pool_token": true,
+        "underlying_address": "0x483a039d157c72bf6F8375F9C431b58b05e9F83C"
       }
-    ],
-    "gauge_addresses": [
-      "0xceE9432d4afC278f67D9Ba2340481fe1b7770E75"
-    ],
-    "lp_constructor": {
-      "name": "Kagla.fi lDAI/lUSDC/lUSDT",
-      "symbol": "l3KGL"
-    },
+    ]
+  },
+  "starlay": {
     "lp_contract": "KaglaTokenV3",
-    "lp_token_address": "0x424eeA39b80591629318A1c152c6D6740DaeFcA1",
-    "pool_types": [
-      "arate"
-    ],
-    "swap_address": "0x56Bbb17329f4943C2455D449B19A1599055E492c",
+    "pool_types": ["arate"],
+    "wrapped_contract": "ATokenMock",
+    "swap_address": "0x70F65a5BBf791b5fE8101247955f906BC3fC2c88",
+    "lp_token_address": "0x91652CB8F5BEF0dc9643371F25AC656fC3210772",
+    "gauge_addresses": ["0x3B1dfc5993aB7BC90e6FBe18221e76CF0318A577"],
+    "lp_constructor": {
+      "symbol": "l3KGL",
+      "name": "Kagla.fi lDAI/lUSDC/lUSDT"
+    },
     "swap_constructor": {
       "_A": 2000,
-      "_aave_lending_pool": "0x8022327a333eAeFaD46A723CDcA1aeFdA12afA53",
-      "_admin_fee": 5000000000,
       "_fee": 4000000,
-      "_offpeg_fee_multiplier": 20000000000
+      "_admin_fee": 5000000000,
+      "_offpeg_fee_multiplier": 20000000000,
+      "_aave_lending_pool": "0x8022327a333eAeFaD46A723CDcA1aeFdA12afA53"
     },
-    "wrapped_contract": "ATokenMock"
+    "coins": [
+      {
+        "name": "lDAI",
+        "underlying_name": "DAI",
+        "decimals": 18,
+        "wrapped_decimals": 18,
+        "tethered": false,
+        "underlying_address": "0x257f1a047948f73158DaDd03eB84b34498bCDc60",
+        "wrapped_address": "0x59448269aa5Cb875F27268368bB1913bF60580aD"
+      },
+      {
+        "name": "lUSDC",
+        "underlying_name": "USDC",
+        "decimals": 6,
+        "wrapped_decimals": 6,
+        "tethered": false,
+        "underlying_address": "0x458db3bEf6ffC5212f9359bbDAeD0D5A58129397",
+        "wrapped_address": "0xF4D80e698D40Aae4F8486E59D3A52BB4b637e867"
+      },
+      {
+        "name": "lUSDT",
+        "underlying_name": "USDT",
+        "decimals": 6,
+        "wrapped_decimals": 6,
+        "tethered": false,
+        "underlying_address": "0xdB25FDCCe3E63B376D308dC2D46234632d9959d8",
+        "wrapped_address": "0xFa668E06fe382ECb6ADBad15108357c1125aF906"
+      }
+    ]
+  },
+  "bai": {
+    "base_pool": "3pool",
+    "pool_types": ["meta"],
+    "lp_contract": "KaglaTokenV3",
+    "swap_address": "0xf77eB0E3fBaF4C29Cb3059B03CC1b10092e74E22",
+    "lp_token_address": "0xe3b307FE4e9b1608CD43414888bf57Ce09371134",
+    "zap_address": "0x09B9B9Ef497Decf18c56d25D0Dc43B07a6B76913",
+    "gauge_addresses": ["0xad8599d608dF5492950150E6F6918196942Ef36D"],
+    "lp_constructor": {
+      "symbol": "BAI3KGL",
+      "name": "Kagla.fi BAI/3Kgl"
+    },
+    "swap_constructor": {
+      "_A": 500,
+      "_fee": 4000000,
+      "_admin_fee": 5000000000
+    },
+    "coins": [
+      {
+        "name": "BAI",
+        "decimals": 18,
+        "tethered": false,
+        "underlying_address": "0xd2f15efD250cA1299EF09504931E870Aa7EC93C6"
+      },
+      {
+        "name": "3KGL",
+        "decimals": 18,
+        "base_pool_token": true,
+        "underlying_address": "0x483a039d157c72bf6F8375F9C431b58b05e9F83C"
+      }
+    ]
+  },
+  "ousd": {
+    "base_pool": "3pool",
+    "pool_types": ["meta"],
+    "lp_contract": "KaglaTokenV3",
+    "swap_address": "0x1249aA57af4607C86d7907d1d2F3F6E0FE8B5Fa9",
+    "lp_token_address": "0xF2F6295C02032BD261EE7B8452818A6Fa5990729",
+    "zap_address": "0x4a5e5E35c598E9C83cd20cF9F7b2a6021ddA34DC",
+    "gauge_addresses": ["0xF827a7d5fED43dDA71A1f332d58f6bD433C3F75B"],
+    "lp_constructor": {
+      "symbol": "oUSD3KGL",
+      "name": "Kagla.fi oUSD/3Kgl"
+    },
+    "swap_constructor": {
+      "_A": 500,
+      "_fee": 4000000,
+      "_admin_fee": 5000000000
+    },
+    "coins": [
+      {
+        "name": "oUSD",
+        "decimals": 18,
+        "tethered": false,
+        "underlying_address": "0x813EE4753945e272da115AFF9Bc53b7F6d15351D"
+      },
+      {
+        "name": "3KGL",
+        "decimals": 18,
+        "base_pool_token": true,
+        "underlying_address": "0x483a039d157c72bf6F8375F9C431b58b05e9F83C"
+      }
+    ]
   }
 }

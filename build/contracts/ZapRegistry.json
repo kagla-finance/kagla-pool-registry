@@ -1,0 +1,2017 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "zap",
+          "type": "address"
+        }
+      ],
+      "name": "ZapAdded",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_address_provider",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "gas": 38719,
+      "inputs": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "zap",
+          "type": "address"
+        }
+      ],
+      "name": "add_zap",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "gas": 1118,
+      "inputs": [],
+      "name": "address_provider",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1363,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "address"
+        }
+      ],
+      "name": "zaps",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts/ZapRegistry.vy"
+  },
+  "ast": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "ast_type": "InterfaceDef",
+        "body": [
+          {
+            "args": {
+              "args": [],
+              "ast_type": "arguments",
+              "col_offset": 4,
+              "default": null,
+              "defaults": [],
+              "end_col_offset": 7,
+              "end_lineno": 8,
+              "lineno": 8,
+              "node_id": 5,
+              "src": "85:3:0"
+            },
+            "ast_type": "FunctionDef",
+            "body": [
+              {
+                "ast_type": "Expr",
+                "col_offset": 28,
+                "end_col_offset": 32,
+                "end_lineno": 8,
+                "lineno": 8,
+                "node_id": 6,
+                "src": "109:4:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 28,
+                  "end_col_offset": 32,
+                  "end_lineno": 8,
+                  "id": "view",
+                  "lineno": 8,
+                  "node_id": 7,
+                  "src": "109:4:0"
+                }
+              }
+            ],
+            "col_offset": 4,
+            "decorator_list": [],
+            "doc_string": null,
+            "end_col_offset": 32,
+            "end_lineno": 8,
+            "lineno": 8,
+            "name": "admin",
+            "node_id": 4,
+            "pos": null,
+            "returns": {
+              "ast_type": "Name",
+              "col_offset": 19,
+              "end_col_offset": 26,
+              "end_lineno": 8,
+              "id": "address",
+              "lineno": 8,
+              "node_id": 9,
+              "src": "100:7:0"
+            },
+            "src": "85:28:0"
+          }
+        ],
+        "col_offset": 0,
+        "end_col_offset": 32,
+        "end_lineno": 8,
+        "lineno": 7,
+        "name": "AddressProvider",
+        "node_id": 3,
+        "src": "54:59:0"
+      },
+      {
+        "ast_type": "EventDef",
+        "body": [
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 10,
+              "end_col_offset": 17,
+              "end_lineno": 11,
+              "id": "address",
+              "lineno": 11,
+              "node_id": 15,
+              "src": "141:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 17,
+            "end_lineno": 11,
+            "lineno": 11,
+            "node_id": 12,
+            "simple": 1,
+            "src": "135:13:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 8,
+              "end_lineno": 11,
+              "id": "pool",
+              "lineno": 11,
+              "node_id": 13,
+              "src": "135:4:0"
+            },
+            "value": null
+          },
+          {
+            "annotation": {
+              "ast_type": "Name",
+              "col_offset": 9,
+              "end_col_offset": 16,
+              "end_lineno": 12,
+              "id": "address",
+              "lineno": 12,
+              "node_id": 20,
+              "src": "158:7:0"
+            },
+            "ast_type": "AnnAssign",
+            "col_offset": 4,
+            "end_col_offset": 16,
+            "end_lineno": 12,
+            "lineno": 12,
+            "node_id": 17,
+            "simple": 1,
+            "src": "153:12:0",
+            "target": {
+              "ast_type": "Name",
+              "col_offset": 4,
+              "end_col_offset": 7,
+              "end_lineno": 12,
+              "id": "zap",
+              "lineno": 12,
+              "node_id": 18,
+              "src": "153:3:0"
+            },
+            "value": null
+          }
+        ],
+        "col_offset": 0,
+        "end_col_offset": 16,
+        "end_lineno": 12,
+        "lineno": 10,
+        "name": "ZapAdded",
+        "node_id": 11,
+        "src": "115:50:0"
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 25,
+              "end_col_offset": 40,
+              "end_lineno": 14,
+              "id": "AddressProvider",
+              "lineno": 14,
+              "node_id": 28,
+              "src": "192:15:0"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 18,
+          "end_col_offset": 41,
+          "end_lineno": 14,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 18,
+            "end_col_offset": 24,
+            "end_lineno": 14,
+            "id": "public",
+            "lineno": 14,
+            "node_id": 26,
+            "src": "185:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 14,
+          "node_id": 25,
+          "src": "185:23:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 41,
+        "end_lineno": 14,
+        "lineno": 14,
+        "node_id": 22,
+        "simple": 1,
+        "src": "167:41:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 16,
+          "end_lineno": 14,
+          "id": "address_provider",
+          "lineno": 14,
+          "node_id": 23,
+          "src": "167:16:0"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Subscript",
+              "col_offset": 13,
+              "end_col_offset": 38,
+              "end_lineno": 15,
+              "lineno": 15,
+              "node_id": 36,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 21,
+                "end_col_offset": 37,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 39,
+                "src": "230:16:0",
+                "value": {
+                  "ast_type": "Tuple",
+                  "col_offset": 21,
+                  "elements": [
+                    {
+                      "ast_type": "Name",
+                      "col_offset": 21,
+                      "end_col_offset": 28,
+                      "end_lineno": 15,
+                      "id": "address",
+                      "lineno": 15,
+                      "node_id": 41,
+                      "src": "230:7:0"
+                    },
+                    {
+                      "ast_type": "Name",
+                      "col_offset": 30,
+                      "end_col_offset": 37,
+                      "end_lineno": 15,
+                      "id": "address",
+                      "lineno": 15,
+                      "node_id": 43,
+                      "src": "239:7:0"
+                    }
+                  ],
+                  "end_col_offset": 37,
+                  "end_lineno": 15,
+                  "lineno": 15,
+                  "node_id": 40,
+                  "src": "230:16:0"
+                }
+              },
+              "src": "222:25:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 13,
+                "end_col_offset": 20,
+                "end_lineno": 15,
+                "id": "HashMap",
+                "lineno": 15,
+                "node_id": 37,
+                "src": "222:7:0"
+              }
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 6,
+          "end_col_offset": 39,
+          "end_lineno": 15,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 6,
+            "end_col_offset": 12,
+            "end_lineno": 15,
+            "id": "public",
+            "lineno": 15,
+            "node_id": 34,
+            "src": "215:6:0"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 15,
+          "node_id": 33,
+          "src": "215:33:0"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 39,
+        "end_lineno": 15,
+        "lineno": 15,
+        "node_id": 30,
+        "simple": 1,
+        "src": "209:39:0",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 4,
+          "end_lineno": 15,
+          "id": "zaps",
+          "lineno": 15,
+          "node_id": 31,
+          "src": "209:4:0"
+        },
+        "value": null
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 32,
+                "end_col_offset": 39,
+                "end_lineno": 17,
+                "id": "address",
+                "lineno": 17,
+                "node_id": 50,
+                "src": "291:7:0"
+              },
+              "arg": "_address_provider",
+              "ast_type": "arg",
+              "col_offset": 13,
+              "end_col_offset": 39,
+              "end_lineno": 17,
+              "lineno": 17,
+              "node_id": 49,
+              "src": "272:26:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 13,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 39,
+          "end_lineno": 17,
+          "lineno": 17,
+          "node_id": 48,
+          "src": "272:26:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 62,
+            "end_lineno": 21,
+            "lineno": 21,
+            "node_id": 54,
+            "src": "354:58:0",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "address_provider",
+              "col_offset": 4,
+              "end_col_offset": 25,
+              "end_lineno": 21,
+              "lineno": 21,
+              "node_id": 55,
+              "src": "354:21:0",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 21,
+                "id": "self",
+                "lineno": 21,
+                "node_id": 56,
+                "src": "354:4:0"
+              }
+            },
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Name",
+                  "col_offset": 44,
+                  "end_col_offset": 61,
+                  "end_lineno": 21,
+                  "id": "_address_provider",
+                  "lineno": 21,
+                  "node_id": 62,
+                  "src": "394:17:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 28,
+              "end_col_offset": 62,
+              "end_lineno": 21,
+              "func": {
+                "ast_type": "Name",
+                "col_offset": 28,
+                "end_col_offset": 43,
+                "end_lineno": 21,
+                "id": "AddressProvider",
+                "lineno": 21,
+                "node_id": 60,
+                "src": "378:15:0"
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 21,
+              "node_id": 59,
+              "src": "378:34:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 16,
+            "id": "external",
+            "lineno": 16,
+            "node_id": 64,
+            "src": "250:8:0"
+          }
+        ],
+        "doc_string": {
+          "ast_type": "DocStr",
+          "col_offset": 4,
+          "end_col_offset": 7,
+          "end_lineno": 20,
+          "lineno": 18,
+          "node_id": 66,
+          "src": "305:44:0",
+          "value": "\n    @notice Constructor function\n    "
+        },
+        "end_col_offset": 62,
+        "end_lineno": 21,
+        "lineno": 17,
+        "name": "__init__",
+        "node_id": 47,
+        "pos": null,
+        "returns": null,
+        "src": "259:153:0"
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 18,
+                "end_col_offset": 25,
+                "end_lineno": 24,
+                "id": "address",
+                "lineno": 24,
+                "node_id": 70,
+                "src": "442:7:0"
+              },
+              "arg": "pool",
+              "ast_type": "arg",
+              "col_offset": 12,
+              "end_col_offset": 25,
+              "end_lineno": 24,
+              "lineno": 24,
+              "node_id": 69,
+              "src": "436:13:0"
+            },
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 32,
+                "end_col_offset": 39,
+                "end_lineno": 24,
+                "id": "address",
+                "lineno": 24,
+                "node_id": 73,
+                "src": "456:7:0"
+              },
+              "arg": "zap",
+              "ast_type": "arg",
+              "col_offset": 27,
+              "end_col_offset": 39,
+              "end_lineno": 24,
+              "lineno": 24,
+              "node_id": 72,
+              "src": "451:12:0"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 12,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 39,
+          "end_lineno": 24,
+          "lineno": 24,
+          "node_id": 68,
+          "src": "436:27:0"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 54,
+            "end_lineno": 25,
+            "lineno": 25,
+            "msg": null,
+            "node_id": 75,
+            "src": "471:50:0",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 54,
+              "end_lineno": 25,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "sender",
+                "col_offset": 11,
+                "end_col_offset": 21,
+                "end_lineno": 25,
+                "lineno": 25,
+                "node_id": 77,
+                "src": "478:10:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 11,
+                  "end_col_offset": 14,
+                  "end_lineno": 25,
+                  "id": "msg",
+                  "lineno": 25,
+                  "node_id": 78,
+                  "src": "478:3:0"
+                }
+              },
+              "lineno": 25,
+              "node_id": 76,
+              "op": {
+                "ast_type": "Eq",
+                "col_offset": 11,
+                "end_col_offset": 54,
+                "end_lineno": 25,
+                "lineno": 25,
+                "node_id": 81,
+                "src": "478:43:0"
+              },
+              "right": {
+                "args": [],
+                "ast_type": "Call",
+                "col_offset": 25,
+                "end_col_offset": 54,
+                "end_lineno": 25,
+                "func": {
+                  "ast_type": "Attribute",
+                  "attr": "admin",
+                  "col_offset": 25,
+                  "end_col_offset": 52,
+                  "end_lineno": 25,
+                  "lineno": 25,
+                  "node_id": 83,
+                  "src": "492:27:0",
+                  "value": {
+                    "ast_type": "Attribute",
+                    "attr": "address_provider",
+                    "col_offset": 25,
+                    "end_col_offset": 46,
+                    "end_lineno": 25,
+                    "lineno": 25,
+                    "node_id": 84,
+                    "src": "492:21:0",
+                    "value": {
+                      "ast_type": "Name",
+                      "col_offset": 25,
+                      "end_col_offset": 29,
+                      "end_lineno": 25,
+                      "id": "self",
+                      "lineno": 25,
+                      "node_id": 85,
+                      "src": "492:4:0"
+                    }
+                  }
+                },
+                "keyword": null,
+                "keywords": [],
+                "lineno": 25,
+                "node_id": 82,
+                "src": "492:29:0"
+              },
+              "src": "478:43:0"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 25,
+            "end_lineno": 26,
+            "lineno": 26,
+            "node_id": 89,
+            "src": "554:21:0",
+            "target": {
+              "ast_type": "Subscript",
+              "col_offset": 4,
+              "end_col_offset": 19,
+              "end_lineno": 26,
+              "lineno": 26,
+              "node_id": 90,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 14,
+                "end_col_offset": 18,
+                "end_lineno": 26,
+                "lineno": 26,
+                "node_id": 95,
+                "src": "564:4:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 14,
+                  "end_col_offset": 18,
+                  "end_lineno": 26,
+                  "id": "pool",
+                  "lineno": 26,
+                  "node_id": 96,
+                  "src": "564:4:0"
+                }
+              },
+              "src": "554:15:0",
+              "value": {
+                "ast_type": "Attribute",
+                "attr": "zaps",
+                "col_offset": 4,
+                "end_col_offset": 13,
+                "end_lineno": 26,
+                "lineno": 26,
+                "node_id": 91,
+                "src": "554:9:0",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 4,
+                  "end_col_offset": 8,
+                  "end_lineno": 26,
+                  "id": "self",
+                  "lineno": 26,
+                  "node_id": 92,
+                  "src": "554:4:0"
+                }
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 22,
+              "end_col_offset": 25,
+              "end_lineno": 26,
+              "id": "zap",
+              "lineno": 26,
+              "node_id": 99,
+              "src": "572:3:0"
+            }
+          },
+          {
+            "ast_type": "Log",
+            "col_offset": 4,
+            "end_col_offset": 27,
+            "end_lineno": 27,
+            "lineno": 27,
+            "node_id": 102,
+            "src": "580:23:0",
+            "value": {
+              "args": [
+                {
+                  "ast_type": "Name",
+                  "col_offset": 17,
+                  "end_col_offset": 21,
+                  "end_lineno": 27,
+                  "id": "pool",
+                  "lineno": 27,
+                  "node_id": 106,
+                  "src": "593:4:0"
+                },
+                {
+                  "ast_type": "Name",
+                  "col_offset": 23,
+                  "end_col_offset": 26,
+                  "end_lineno": 27,
+                  "id": "zap",
+                  "lineno": 27,
+                  "node_id": 108,
+                  "src": "599:3:0"
+                }
+              ],
+              "ast_type": "Call",
+              "col_offset": 8,
+              "end_col_offset": 27,
+              "end_lineno": 27,
+              "func": {
+                "ast_type": "Name",
+                "col_offset": 8,
+                "end_col_offset": 16,
+                "end_lineno": 27,
+                "id": "ZapAdded",
+                "lineno": 27,
+                "node_id": 104,
+                "src": "584:8:0"
+              },
+              "keyword": null,
+              "keywords": [],
+              "lineno": 27,
+              "node_id": 103,
+              "src": "584:19:0"
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 23,
+            "id": "external",
+            "lineno": 23,
+            "node_id": 110,
+            "src": "415:8:0"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 27,
+        "end_lineno": 27,
+        "lineno": 24,
+        "name": "add_zap",
+        "node_id": 67,
+        "pos": null,
+        "returns": null,
+        "src": "424:179:0"
+      }
+    ],
+    "col_offset": 0,
+    "doc_string": {
+      "ast_type": "DocStr",
+      "col_offset": 0,
+      "end_col_offset": 3,
+      "end_lineno": 5,
+      "lineno": 2,
+      "node_id": 112,
+      "src": "18:34:0",
+      "value": "\n@title Kagla Zap Registry\n\n"
+    },
+    "end_col_offset": 27,
+    "end_lineno": 27,
+    "lineno": 1,
+    "name": "contracts/ZapRegistry.vy",
+    "node_id": 0,
+    "src": "0:603:0"
+  },
+  "bytecode": "0x602061017261014039602061017260c03960c05160a01c1561002057600080fd5b6101405160005561015a56600436101561000d57610128565b600035601c52600051341561002157600080fd5b63e174a53d8114156100d85760043560a01c1561003d57600080fd5b60243560a01c1561004d57600080fd5b60206101a0600463f851a4406101405261015c6000545afa61006e57600080fd5b601f3d1161007b57600080fd5b6000506101a051331461008d57600080fd5b602435600160043560e05260c052604060c0205560043561014052602435610160527f7be565550d2e93a3bc440eaeeb99a6d51c53d6ed71f33cc525434d4d867308896040610140a1005b63ce50c2e78114156100f05760005460005260206000f35b63e676ea958114156101265760043560a01c1561010c57600080fd5b600160043560e05260c052604060c0205460005260206000f35b505b60006000fd5b61002c61015a0361002c60003961002c61015a036000f3",
+  "bytecodeSha1": "4145043e22bef053a1e781bcec90600f576e5801",
+  "compiler": {
+    "evm_version": "istanbul",
+    "version": "0.2.11"
+  },
+  "contractName": "ZapRegistry",
+  "coverageMap": {
+    "branches": {
+      "0": {
+        "ZapRegistry.add_zap": {
+          "1": [
+            471,
+            521,
+            true
+          ]
+        }
+      }
+    },
+    "statements": {
+      "0": {
+        "ZapRegistry.add_zap": {
+          "0": [
+            471,
+            521
+          ],
+          "2": [
+            554,
+            575
+          ],
+          "3": [
+            580,
+            603
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "0x600436101561000d57610128565b600035601c52600051341561002157600080fd5b63e174a53d8114156100d85760043560a01c1561003d57600080fd5b60243560a01c1561004d57600080fd5b60206101a0600463f851a4406101405261015c6000545afa61006e57600080fd5b601f3d1161007b57600080fd5b6000506101a051331461008d57600080fd5b602435600160043560e05260c052604060c0205560043561014052602435610160527f7be565550d2e93a3bc440eaeeb99a6d51c53d6ed71f33cc525434d4d867308896040610140a1005b63ce50c2e78114156100f05760005460005260206000f35b63e676ea958114156101265760043560a01c1561010c57600080fd5b600160043560e05260c052604060c0205460005260206000f35b505b60006000fd",
+  "deployedSourceMap": "-1:-1:0:-;;;;;:::-;;:::-;:::-;;;;;;;;;;:::-;;;;:::-;424:179;;;;;:::-;-1:-1;;;;;424:179;:::-;;;;:::-;-1:-1;;;;;424:179;:::-;;;;:::-;492:29;;;-1:-1;;;;492:29;;;;;:::-;;;;:::-;;;;;:::-;;;;:::-;;;;478:43;:10;:43;471:50;:::-;;;;:::-;572:3;-1:-1;554:9;564:4;-1:-1;;;;;;;;554:21;593:4;-1:-1;;580:23;599:3;-1:-1;;580:23;-1:-1;;;580:23;424:179;:::-;185:23;;;;;:::-;-1:-1;185:23;;;;;;:::-;215:33;;;;;:::-;-1:-1;;;;;215:33;:::-;;;;:::-;-1:-1;;;;;;;;;;215:33;;;;;;:::-;-1:-1;:::-;;;;",
+  "language": "Vyper",
+  "natspec": {
+    "methods": {
+      "__init__(address)": {
+        "notice": "Constructor function"
+      }
+    },
+    "title": "Kagla Zap Registry"
+  },
+  "offset": [
+    0,
+    604
+  ],
+  "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x128 JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0x1C MSTORE PUSH1 0x0 MLOAD CALLVALUE ISZERO PUSH2 0x021 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH4 0xE174A53D DUP2 EQ ISZERO PUSH2 0x0D8 JUMPI PUSH1 0x4 CALLDATALOAD PUSH1 0xA0 SHR ISZERO PUSH2 0x03D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x24 CALLDATALOAD PUSH1 0xA0 SHR ISZERO PUSH2 0x04D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x20 PUSH2 0x1A0 PUSH1 0x4 PUSH4 0xF851A440 PUSH2 0x140 MSTORE PUSH2 0x15C PUSH1 0x0 SLOAD GAS STATICCALL PUSH2 0x06E JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x1F RETURNDATASIZE GT PUSH2 0x07B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 POP PUSH2 0x1A0 MLOAD CALLER EQ PUSH2 0x08D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x24 CALLDATALOAD PUSH1 0x1 PUSH1 0x4 CALLDATALOAD PUSH1 0xE0 MSTORE PUSH1 0xC0 MSTORE PUSH1 0x40 PUSH1 0xC0 SHA3 SSTORE PUSH1 0x4 CALLDATALOAD PUSH2 0x140 MSTORE PUSH1 0x24 CALLDATALOAD PUSH2 0x160 MSTORE PUSH32 0x7BE56555D2E93A3BC44EAEEB99A6D51C53D6ED71F33CC525434D4D8673889 PUSH1 0x40 PUSH2 0x140 LOG1 STOP JUMPDEST PUSH4 0xCE50C2E7 DUP2 EQ ISZERO PUSH2 0x0F0 JUMPI PUSH1 0x0 SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST PUSH4 0xE676EA95 DUP2 EQ ISZERO PUSH2 0x126 JUMPI PUSH1 0x4 CALLDATALOAD PUSH1 0xA0 SHR ISZERO PUSH2 0x1C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x1 PUSH1 0x4 CALLDATALOAD PUSH1 0xE0 MSTORE PUSH1 0xC0 MSTORE PUSH1 0x40 PUSH1 0xC0 SHA3 SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST POP JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        603
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "2": {
+      "op": "CALLDATASIZE"
+    },
+    "3": {
+      "op": "LT"
+    },
+    "4": {
+      "op": "ISZERO"
+    },
+    "5": {
+      "op": "PUSH2",
+      "value": "0x0D"
+    },
+    "8": {
+      "op": "JUMPI"
+    },
+    "9": {
+      "op": "PUSH2",
+      "value": "0x128"
+    },
+    "12": {
+      "op": "JUMP"
+    },
+    "13": {
+      "op": "JUMPDEST"
+    },
+    "14": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "16": {
+      "op": "CALLDATALOAD"
+    },
+    "17": {
+      "op": "PUSH1",
+      "value": "0x1C"
+    },
+    "19": {
+      "op": "MSTORE"
+    },
+    "20": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "22": {
+      "op": "MLOAD"
+    },
+    "23": {
+      "op": "CALLVALUE"
+    },
+    "24": {
+      "op": "ISZERO"
+    },
+    "25": {
+      "op": "PUSH2",
+      "value": "0x021"
+    },
+    "28": {
+      "op": "JUMPI"
+    },
+    "29": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "31": {
+      "offset": [
+        0,
+        0
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "32": {
+      "dev": "Cannot send ether to nonpayable function",
+      "op": "REVERT"
+    },
+    "33": {
+      "op": "JUMPDEST"
+    },
+    "34": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xE174A53D"
+    },
+    "39": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "40": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "41": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "42": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0D8"
+    },
+    "45": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "46": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "48": {
+      "op": "CALLDATALOAD"
+    },
+    "49": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "51": {
+      "op": "SHR"
+    },
+    "52": {
+      "op": "ISZERO"
+    },
+    "53": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x03D"
+    },
+    "56": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "57": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "59": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "60": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "61": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "62": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "64": {
+      "op": "CALLDATALOAD"
+    },
+    "65": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "67": {
+      "op": "SHR"
+    },
+    "68": {
+      "op": "ISZERO"
+    },
+    "69": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x04D"
+    },
+    "72": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "73": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "75": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "76": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "77": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "78": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 0,
+      "value": "0x20"
+    },
+    "80": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1A0"
+    },
+    "83": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "85": {
+      "op": "PUSH4",
+      "value": "0xF851A440"
+    },
+    "90": {
+      "op": "PUSH2",
+      "value": "0x140"
+    },
+    "93": {
+      "op": "MSTORE"
+    },
+    "94": {
+      "op": "PUSH2",
+      "value": "0x15C"
+    },
+    "97": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "99": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "100": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "GAS",
+      "path": "0"
+    },
+    "101": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "STATICCALL",
+      "path": "0"
+    },
+    "102": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x06E"
+    },
+    "105": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "106": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "108": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "109": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "110": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "111": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "113": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "114": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "GT",
+      "path": "0"
+    },
+    "115": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x07B"
+    },
+    "118": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "119": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "121": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "122": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "123": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "124": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "126": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "127": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        492,
+        521
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1A0"
+    },
+    "130": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        478,
+        521
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "131": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        478,
+        488
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "132": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        478,
+        521
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "133": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x08D"
+    },
+    "136": {
+      "branch": 1,
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "137": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "139": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "140": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "141": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        471,
+        521
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "142": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        572,
+        575
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 2,
+      "value": "0x24"
+    },
+    "144": {
+      "op": "CALLDATALOAD"
+    },
+    "145": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        554,
+        563
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "147": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        564,
+        568
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "149": {
+      "op": "CALLDATALOAD"
+    },
+    "150": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "152": {
+      "op": "MSTORE"
+    },
+    "153": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "155": {
+      "op": "MSTORE"
+    },
+    "156": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "158": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "160": {
+      "op": "SHA3"
+    },
+    "161": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        554,
+        575
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "162": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        593,
+        597
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 3,
+      "value": "0x4"
+    },
+    "164": {
+      "op": "CALLDATALOAD"
+    },
+    "165": {
+      "op": "PUSH2",
+      "value": "0x140"
+    },
+    "168": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        580,
+        603
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "169": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        599,
+        602
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x24"
+    },
+    "171": {
+      "op": "CALLDATALOAD"
+    },
+    "172": {
+      "op": "PUSH2",
+      "value": "0x160"
+    },
+    "175": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        580,
+        603
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "176": {
+      "op": "PUSH32",
+      "value": "0x7BE56555D2E93A3BC44EAEEB99A6D51C53D6ED71F33CC525434D4D8673889"
+    },
+    "209": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "211": {
+      "op": "PUSH2",
+      "value": "0x140"
+    },
+    "214": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        580,
+        603
+      ],
+      "op": "LOG1",
+      "path": "0"
+    },
+    "215": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "216": {
+      "fn": "ZapRegistry.add_zap",
+      "offset": [
+        424,
+        603
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "217": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xCE50C2E7"
+    },
+    "222": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "223": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "224": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "225": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0F0"
+    },
+    "228": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "229": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "231": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "232": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "234": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "235": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "237": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "239": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "240": {
+      "offset": [
+        185,
+        208
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "241": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xE676EA95"
+    },
+    "246": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "247": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "248": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "249": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x126"
+    },
+    "252": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "253": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "255": {
+      "op": "CALLDATALOAD"
+    },
+    "256": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "258": {
+      "op": "SHR"
+    },
+    "259": {
+      "op": "ISZERO"
+    },
+    "260": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1C"
+    },
+    "263": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "264": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "266": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "267": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "268": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "269": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "271": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "273": {
+      "op": "CALLDATALOAD"
+    },
+    "274": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "276": {
+      "op": "MSTORE"
+    },
+    "277": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "279": {
+      "op": "MSTORE"
+    },
+    "280": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "282": {
+      "op": "PUSH1",
+      "value": "0xC0"
+    },
+    "284": {
+      "op": "SHA3"
+    },
+    "285": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "286": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "288": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "289": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "291": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "293": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "294": {
+      "offset": [
+        215,
+        248
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "295": {
+      "op": "POP"
+    },
+    "296": {
+      "op": "JUMPDEST"
+    },
+    "297": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "299": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "301": {
+      "op": "REVERT"
+    }
+  },
+  "sha1": "380325828318517b9347f6d8c50923a9612559ae",
+  "source": "# @version 0.2.11\n\"\"\"\n@title Kagla Zap Registry\n\n\"\"\"\n\ninterface AddressProvider:\n    def admin() -> address: view\n\nevent ZapAdded:\n    pool: address\n    zap: address\n\naddress_provider: public(AddressProvider)\nzaps: public(HashMap[address, address])\n@external\ndef __init__(_address_provider: address):\n    \"\"\"\n    @notice Constructor function\n    \"\"\"\n    self.address_provider = AddressProvider(_address_provider)\n\n@external\ndef add_zap(pool: address, zap: address): \n    assert msg.sender == self.address_provider.admin()  # dev: admin-only function\n    self.zaps[pool] = zap\n    log ZapAdded(pool, zap)\n",
+  "sourceMap": "",
+  "sourcePath": "contracts/ZapRegistry.vy",
+  "type": "contract"
+}

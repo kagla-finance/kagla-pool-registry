@@ -11,7 +11,7 @@ from scripts.utils import pack_values
 # modify this prior to mainnet use
 DEPLOYER = accounts.load("kagla-deploy")
 
-REGISTRY = "0x0B05118f9068a0019527d78793934b52052d9025"
+REGISTRY = "0x3c3b852A6A73BE1A8c46AC7ad13582bC58E05C5a"
 
 RATE_METHOD_IDS = {
     "ATokenMock": "0x00000000",
@@ -22,8 +22,8 @@ RATE_METHOD_IDS = {
     "yERC20": "0x77c7b8fc",  # getPricePerFullShare
 }
 
+
 def print_gauges_from_getistry(registry=REGISTRY, deployer=DEPLOYER):
-    reg = Registry.at(registry)
     pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
     for _, data in pool_data:
         pool = data["swap_address"]
@@ -34,7 +34,7 @@ def add_pool(data, registry, deployer, pool_name):
     chain = Chain()
     manifest = json.load(
         open(
-            "./kagla-finance/kagla-contract@0.0.7/build/deployments/"
+            "scripts/kagla-finance/"
             + str(chain.id)
             + "/"
             + data["swap_address"]
@@ -119,34 +119,34 @@ def main(registry=REGISTRY, deployer=DEPLOYER):
     pool_data = sorted(get_pool_data().items(), key=lambda item: item[1].get("base_pool", ""))
     print("Adding pools to registry...")
     count = 0
-    pool_names = ["3Pool", "Starlay 3Pool", "BUSD+3KGL"]
+    pool_names = ["3Pool", "Starlay 3Pool", "BUSD+3KGL", "BAI+3KGL", "oUSD+3KGL"]
     for name, data in pool_data:
         pool = data["swap_address"]
         name = pool_names[count]
-        count = count +1
+        count = count + 1
         if registry.get_n_coins(pool)[0] == 0:
             print(f"\nAdding {name}...")
-            add_pool(data, registry, deployer, "3Pool")
+            add_pool(data, registry, deployer, name)
         else:
             print(f"\n{name} has already been added to registry")
 
         gauges = data["gauge_addresses"]
         gauges = gauges + ["0x0000000000000000000000000000000000000000"] * (10 - len(gauges))
-        
+
         if registry.get_gauges(pool)[0] == gauges:
             print(f"{name} gauges are up-to-date")
-            #continue
+            # continue
         print(f"Updating gauges for {name}...")
         print(pool, data["gauge_addresses"])
         for gauge in data["gauge_addresses"]:
             try:
                 print('gauge:', gauge, 'controller:', gauge_controller)
-                #Contract(gauge_controller).gauge_types(gauge, {"from": deployer})
+                # Contract(gauge_controller).gauge_types(gauge, {"from": deployer})
             except (ValueError, VirtualMachineError):
                 print(f"Gauge {gauge} is not known to GaugeController, cannot add to registry")
                 gauges = False
                 break
-        
+
         if gauges:
             registry.set_liquidity_gauges(pool, gauges, {"from": deployer})
 
